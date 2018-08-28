@@ -9,7 +9,7 @@ public final class NumberCompare {
       /**
      * Empty Constructor.
     */
-    private Solution() {
+    private NumberCompare() {
         //Iam not using this constructor
     }
     /**
