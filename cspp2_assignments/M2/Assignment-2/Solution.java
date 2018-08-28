@@ -38,6 +38,7 @@ public final class Solution {
         double root1 = ((-b) + Math.sqrt(var1)) / (2 * a);
         double root2 = ((-b) - Math.sqrt(var1)) / (2 * a);
         System.out.println(root1 + " " + root2);
+
     }
     /*
     Need to write the rootsOfQuadraticEquation function and print the output.
