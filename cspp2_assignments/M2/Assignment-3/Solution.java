@@ -17,18 +17,26 @@ public final class Solution {
      * @param args is the parameter for this function
     */
     public static void main(final String[] args) {
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);
         int base = s.nextInt();
         int exponent = s.nextInt();
-        long result=power(base,exponent);
+        long result = power(base, exponent);
         System.out.println(result);
     }
     /*
     Need to write the power function and print the output.
     */
+    /**
+     * { function_description }
+     *
+     * @param      b     { parameter_description }
+     * @param      e     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     static long power(int b, int e) {
         if (e > 0) {
-            return b * power(b, e-1);
+            return b * power(b, e - 1);
         }
         return 1;
     }
