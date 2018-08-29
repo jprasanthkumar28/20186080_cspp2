@@ -5,7 +5,9 @@ import java.util.Scanner;
 public final class Solution {
     /**
      * Empty Constructor.
-     */
+    */
+    private static final int TEN = 10;
+    private static final int SEVEN = 7;
     private Solution() {
         //Iam not using this constructor.
     }
@@ -17,26 +19,27 @@ public final class Solution {
 /* Fill the main function to print the number of 7's between 1 to n*/
     public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);      
+        Scanner s = new Scanner(System.in);      
         int n = s.nextInt();
-        int i=0,count=0,value = 0;
-  	    while(i<n) {
-	       if(i % 10 == 7)
+        int i = 0,count = 0,value = 0;
+  	    while (i < n) {
+	       if (i % TEN == SEVEN) {
 	       	count += 1;
+	       }
 	   		i += 1;
 		}
   		// System.out.println(count);
 		for (int j = 0; j < n; j++) {
 			// System.out.println(j);
-			int a = j / 10;
+			int a = j / TEN;
 			while(a > 0) {
-	     	  if(a % 10 == 7) {
+	     	  if (a % TEN == SEVEN) {
 	       		value += 1;
 	 			}
-	   				a = a/10;
+	   				a = a / TEN;
 			}
 			// System.out.println(n);
-			if (a == 7) {
+			if (a == SEVEN) {
 				value += 1;
 				// System.out.println(value);
 			}
