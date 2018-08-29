@@ -7,7 +7,7 @@ public final class Solution {
      * Empty Constructor.
     */
     private Solution() {
-        //Iam not using this constructor
+        //Iam not using this constructor.
     }
     /**
      * Main function to print.
@@ -16,10 +16,10 @@ public final class Solution {
      */
     public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);      
+        Scanner s=new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
-        int ans = gcd(n1,n2);
+        int ans = gcd(n1, n2);
         System.out.println(ans);
     }
     /**
@@ -33,7 +33,7 @@ public final class Solution {
     public static int gcd(final int a, final int b) {
 
         int gcd = 1;
-        for (int i = 1 ;i <= a && i <= b ;i++) {
+        for (int i = 1; i <= a && i <= b; i++) {
             if ((a % i == 0) && (b % i == 0)) {
                 gcd = i;
             }
