@@ -16,7 +16,7 @@ public final class Solution {
         //Iam not using this constructor.
     }
 /**
- * Fill the main function to print the number of 7's between 1 to n
+ * Fill the main function to print the number of 7's between 1 to n.
  *
  * @param      args  The arguments
  */
