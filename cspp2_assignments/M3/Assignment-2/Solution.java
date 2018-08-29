@@ -15,12 +15,11 @@ public final class Solution {
     private Solution() {
         //Iam not using this constructor.
     }
-    /**
-     * Main function to print.
-     *
-     * @param      args  is the parameter for this function
-     */
-/* Fill the main function to print the number of 7's between 1 to n*/
+/**
+ * Fill the main function to print the number of 7's between 1 to n
+ *
+ * @param      args  The arguments
+ */
     public static void main(final String[] args) {
 
         Scanner s = new Scanner(System.in);
