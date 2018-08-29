@@ -1,7 +1,7 @@
+/**
+ * @author Prasanth...
+*/
 import java.util.Scanner;
-/*
-	Do not modify this main function.
-	*/
 public final class Solution {
     /**
      * Empty Constructor.
@@ -14,7 +14,7 @@ public final class Solution {
      *
      * @param      args  is the parameter for this function
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 
         Scanner s=new Scanner(System.in);      
         int n1 = s.nextInt();
@@ -22,7 +22,16 @@ public final class Solution {
         int ans = gcd(n1,n2);
         System.out.println(ans);
     }
-    public static int gcd(int a, int b) {
+    /**
+     * { function_description }
+     *
+     * @param      a     { parameter_description }
+     * @param      b     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public static int gcd(final int a, final int b) {
+
         int gcd = 1;
         for (int i = 1 ;i <= a && i <= b ;i++) {
             if ((a % i == 0) && (b % i == 0)) {
@@ -32,6 +41,6 @@ public final class Solution {
         return gcd;
     }
     /*
-	Need to write the gcd function and print the output.
-	*/
+    Need to write the gcd function and print the output.
+    */
 }
