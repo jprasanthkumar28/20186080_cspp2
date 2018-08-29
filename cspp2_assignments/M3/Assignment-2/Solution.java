@@ -1,11 +1,11 @@
 import java.util.Scanner;
 /**
  * @author     Prasanth...
- */
+*/
 public final class Solution {
     /**
      * Empty Constructor.
-     */
+    */
     private static final int TEN = 10;
     private static final int SEVEN = 7;
     /**
