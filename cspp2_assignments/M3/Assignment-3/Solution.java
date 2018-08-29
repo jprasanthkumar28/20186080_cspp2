@@ -1,9 +1,19 @@
-
 import java.util.Scanner;
 /*
 	Do not modify this main function.
 	*/
-public class Solution {
+public final class Solution {
+    /**
+     * Empty Constructor.
+    */
+    private Solution() {
+        //Iam not using this constructor
+    }
+    /**
+     * Main function to print.
+     *
+     * @param      args  is the parameter for this function
+     */
     public static void main(String[] args) {
 
         Scanner s=new Scanner(System.in);      
@@ -14,7 +24,7 @@ public class Solution {
     }
     public static int gcd(int a, int b) {
         int gcd = 1;
-        for (int i=1 ;i<=a && i<= b ;i++ ) {
+        for (int i = 1 ;i <= a && i <= b ;i++) {
             if ((a % i == 0) && (b % i == 0)) {
                 gcd = i;
             }
