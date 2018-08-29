@@ -7,7 +7,6 @@ public final class Solution {
      * Empty Constructor.
      */
     private static final int TEN = 10;
-
     private static final int SEVEN = 7;
     /**
      * Constructs the object.
@@ -15,11 +14,11 @@ public final class Solution {
     private Solution() {
         //Iam not using this constructor.
     }
-/**
- * Fill the main function to print the number of 7's between 1 to n.
- *
- * @param      args  The arguments
- */
+    /**
+     * Fill the main function to print the number of 7's between 1 to n.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
 
         Scanner s = new Scanner(System.in);
