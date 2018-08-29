@@ -29,6 +29,12 @@ public final class Solution {
 		for (int j = 0; j < n; j++) {
 			// System.out.println(j);
 			int a = j / 10;
+			while(a > 0) {
+	     	  if(a % 10 == 7) {
+	       		value += 1;
+	 			}
+	   				a = a/10;
+			}
 			// System.out.println(n);
 			if (a == 7) {
 				value += 1;
