@@ -7,6 +7,9 @@ public final class Solution {
      * Empty Constructor.
     */
     private static final int TEN = 10;
+    /**
+     * Constructs the object.
+     */
     private static final int SEVEN = 7;
     /**
      * Constructs the object.
