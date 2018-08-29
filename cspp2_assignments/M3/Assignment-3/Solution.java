@@ -1,7 +1,7 @@
+import java.util.Scanner;
 /**
  * @author Prasanth...
 */
-import java.util.Scanner;
 public final class Solution {
     /**
      * Empty Constructor.
