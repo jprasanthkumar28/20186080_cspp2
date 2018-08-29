@@ -5,7 +5,7 @@ import java.util.Scanner;
 public final class Solution {
     /**
      * Empty Constructor.
-    */
+     */
     private Solution() {
         //Iam not using this constructor.
     }
@@ -16,14 +16,14 @@ public final class Solution {
      */
     public static void main(final String[] args) {
 
-        Scanner s=new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
         int n1 = s.nextInt();
         int n2 = s.nextInt();
         int ans = gcd(n1, n2);
         System.out.println(ans);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      a     { parameter_description }
      * @param      b     { parameter_description }
