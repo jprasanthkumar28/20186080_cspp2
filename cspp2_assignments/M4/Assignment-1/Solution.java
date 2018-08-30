@@ -15,10 +15,6 @@ public final class Solution {
         //Iam not using this constructor
     }
     /**
-     * Main function to print.
-     * @param args is the parameter for this function.
-    */
-    /**
     Fill this main function to print maximum of given array
     @param      args  The arguments.
     */
