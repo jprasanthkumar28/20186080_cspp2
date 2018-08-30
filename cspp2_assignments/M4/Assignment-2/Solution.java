@@ -20,12 +20,13 @@ public class Solution {
 				b[i][j] = s.nextInt();
 			}
 		}
-		for (int i = 0; i < m; i++) {
-			for (int j = 0; j < n; j++) {
+		int i,j;
+		for (i = 0; i < m; i++) {
+			for (j = 0; j < n; j++) {
 				sum[i][j] = a[i][j] + b[i][j];
 				System.out.print(sum[i][j] + " ");
 			}
-			System.out.println();
+			System.out.println(sum[i][j]);
 		}
 		// for (int i = 0; i < m; i++) {
 		// System.out.println(Arrays.toString(sum[i]));			
