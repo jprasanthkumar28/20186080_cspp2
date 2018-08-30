@@ -42,6 +42,7 @@ public final class Solution {
                 b[i][j] = s.nextInt();
             }
         }
+        if((m == m1 && n == n1)) {
         int i, j;
         for (i = 0; i < m; i++) {
             for (j = 0; j < n; j++) {
@@ -50,16 +51,15 @@ public final class Solution {
             }
             // System.out.println(sum[i][j]);
         }
-        if (m == n) {
         for (i = 0; i <= m - 1; i++) {
             for (j = 0; j < n - 1; j++) {
                 System.out.print(sum[i][j] + " ");
             }
             System.out.println(sum[i][j]);
         }
-        } else {
-            System.out.println("not possible");
-        }
+    } else {
+        System.out.println("not possible");
+    }
         // for (int i = 0; i < m; i++) {
         // System.out.println(Arrays.toString(sum[i]));         
         // }
