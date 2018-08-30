@@ -12,10 +12,10 @@ public final class Solution {
      * Constructs the object.
      */
     private Solution() {
-        //Iam not using this constructor
+        //Iam not using this constructor.
     }
     /**
-    Fill this main function to print maximum of given array
+    Fill this main function to print maximum of given array.
     @param      args  The arguments.
     */
     public static void main(final String[] args) {
