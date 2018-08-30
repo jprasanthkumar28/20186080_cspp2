@@ -1,10 +1,33 @@
 import java.util.Arrays;
 import java.util.Scanner;
-public class Solution
-{/*
+/**
+ *@author Prasanth...
+*/
+public final class Solution
+{
+    /**
+     * Empty Constructor.
+     */
+    // private static final int MAXVALUE = 5;
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Iam not using this constructor
+    }
+    /**
+     * Main function to print.
+     * @param args is the parameter for this function
+    */
+    /**
+     * Fill the main function to print resultant of addition of matrices.
+     *
+     * @param      args  The arguments
+     */
+	/*
 	Fill this main function to print maximum of given array
 	*/
-	public static void main(String[] args)
+	public static void main(final String[] args)
 	{
 		Scanner sc=new Scanner(System.in);
 		int n= sc.nextInt();
