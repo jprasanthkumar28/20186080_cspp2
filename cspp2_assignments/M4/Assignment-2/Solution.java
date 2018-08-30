@@ -25,7 +25,7 @@ public class Solution {
 				sum[i][j] = a[i][j] + b[i][j];
 				System.out.print(sum[i][j] + " ");
 			}
-			// System.out.println();
+			System.out.println();
 		}
 		// for (int i = 0; i < m; i++) {
 		// System.out.println(Arrays.toString(sum[i]));			
