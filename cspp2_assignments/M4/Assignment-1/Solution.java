@@ -16,11 +16,10 @@ public final class Solution {
     }
     /**
      * Main function to print.
-     * @param args is the parameter for this function
+     * @param args is the parameter for this function.
     */
     /**
     Fill this main function to print maximum of given array
-    
     @param      args  The arguments
     */
     public static void main(final String[] args) {
