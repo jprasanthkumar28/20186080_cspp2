@@ -1,10 +1,9 @@
-import java.util.Arrays;
+// import java.util.Arrays;
 import java.util.Scanner;
 /**
  *@author Prasanth...
 */
-public final class Solution
-{
+public final class Solution {
     /**
      * Empty Constructor.
      */
@@ -20,28 +19,25 @@ public final class Solution
      * @param args is the parameter for this function
     */
     /**
-     * Fill the main function to print resultant of addition of matrices.
-     *
-     * @param      args  The arguments
-     */
-	/*
-	Fill this main function to print maximum of given array
-	*/
-	public static void main(final String[] args)
-	{
-		Scanner sc=new Scanner(System.in);
-		int n= sc.nextInt();
-		int[] array = new int[n];
-		int big = 0;
-		for (int i = 0; i < array.length; i++ ) {
-			array[i] = sc.nextInt();
-			if (array[i] > big) {
-				big = array[i];
-			}
-			// System.out.println(Arrays.toString(array));
-		}
-		System.out.println(big);
-		
+    Fill this main function to print maximum of given array
+    
+    @param      args  The arguments
+    */
+    public static void main(final String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] array = new int[n];
+        int big = 0;
+        for (int i = 0; i < array.length; i++ ) {
+            array[i] = sc.nextInt();
+            if (array[i] > big ) {
+                big = array[i];
+            }
+            // System.out.println(Arrays.toString(array));
+        }
+        System.out.println(big);
+        
 
-	}
+    }
 }
