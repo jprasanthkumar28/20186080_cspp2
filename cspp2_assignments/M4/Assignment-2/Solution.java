@@ -57,6 +57,8 @@ public final class Solution {
             }
             System.out.println(sum[i][j]);
         }
+        } else {
+            System.out.println("not possible");
         }
         // for (int i = 0; i < m; i++) {
         // System.out.println(Arrays.toString(sum[i]));         
