@@ -23,21 +23,18 @@ public final class Solution {
     
     @param      args  The arguments
     */
-    public static void main(final String[] args)
-    {
+    public static void main(final String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int[] array = new int[n];
         int big = 0;
-        for (int i = 0; i < array.length; i++ ) {
+        for (int i = 0; i < array.length; i++) {
             array[i] = sc.nextInt();
-            if (array[i] > big ) {
+            if (array[i] > big) {
                 big = array[i];
             }
             // System.out.println(Arrays.toString(array));
         }
         System.out.println(big);
-        
-
     }
 }
