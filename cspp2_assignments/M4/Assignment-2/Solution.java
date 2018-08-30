@@ -1,7 +1,7 @@
+import java.util.Scanner;
 /**
  *@author Prasanth...
 */
-import java.util.Scanner;
 public final class Solution {
     /**
      * Empty Constructor.
@@ -18,7 +18,7 @@ public final class Solution {
      * @param args is the parameter for this function
     */
     /**
-     * Fill the main function to print resultant of addition of matrices
+     * Fill the main function to print resultant of addition of matrices.
      *
      * @param      args  The arguments
      */
@@ -42,7 +42,7 @@ public final class Solution {
                 b[i][j] = s.nextInt();
             }
         }
-        if((m == m1 && n == n1)) {
+        if ((m == m1 && n == n1)) {
         int i, j;
         for (i = 0; i < m; i++) {
             for (j = 0; j < n; j++) {
@@ -61,7 +61,7 @@ public final class Solution {
         System.out.println("not possible");
     }
         // for (int i = 0; i < m; i++) {
-        // System.out.println(Arrays.toString(sum[i]));         
+        // System.out.println(Arrays.toString(sum[i]));
         // }
 
     }
