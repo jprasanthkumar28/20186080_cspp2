@@ -11,24 +11,23 @@ public class Solution {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		for(int i = 0; i <= n; i++){
-			int s = sc.nextInt();
-			int res = binaryToDecimal(s);//Write binaryToDecimal function
+			String s = sc.next();
+			long res=binaryToDecimal(s);//Write binaryToDecimal function
 			System.out.println(res);
 		}
 	}
-	public static int binaryToDecimal(int value) {
-		int decimal = 0;
+	public static long binaryToDecimal(final String value) {
+		double  result;
+		int sum = 0;
 		int p = 0;
-		while(true) {
-			if(value == 0) {
-				break;
-			} else {
-				int temp = value % 10;
-				decimal += temp*Math.pow(2,p);
-				value = value / 10;
+		for (int i = 0; i < value.length(); i++) {
+			if (value.charAt(i) != '0') {
+				result = Math.pow(2, p);
+				sum += result;
 				p++;
 			}
 		}
-		return decimal;
+		return sum;
 	}
+
 }
