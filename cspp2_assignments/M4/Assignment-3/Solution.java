@@ -19,13 +19,13 @@ public class Solution {
 	public static long binaryToDecimal(final String value) {
 		double  result;
 		int sum = 0;
-		int p = 0;
+		int p = value.length() - 1;
 		for (int i = 0; i < value.length(); i++) {
 			if (value.charAt(i) != '0') {
 				result = Math.pow(2, p);
 				sum += result;
-				p++;
 			}
+			p = p - 1;
 		}
 		return sum;
 	}
