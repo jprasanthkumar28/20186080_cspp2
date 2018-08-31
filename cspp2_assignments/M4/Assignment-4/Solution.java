@@ -7,7 +7,6 @@ import java.util.Scanner;
 public final class Solution {
     /**
     Do not modify the main function
-    @param      args  The arguments
     */
     private Solution() {
         //Iam not using this constructor
@@ -25,7 +24,7 @@ public final class Solution {
         System.out.println(reverse);
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      s     { parameter_description }
      *
@@ -33,7 +32,7 @@ public final class Solution {
      */
     public static String reverseString(final String s) {
         String temp = "";
-        for (int i = s.length()-1; i >= 0; i--) {
+        for (int i = s.length() - 1; i >= 0; i--) {
             temp = temp + s.charAt(i);
         }
         return temp;
