@@ -10,7 +10,7 @@ public class Solution {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
-		for(int i = 0; i <= n; i++){
+		for(int i = 0; i < n; i++){
 			String s = sc.next();
 			long res=binaryToDecimal(s);//Write binaryToDecimal function
 			System.out.println(res);
@@ -20,8 +20,8 @@ public class Solution {
 		double  result;
 		int sum = 0;
 		int p = value.length() - 1;
-		for (int i = 0; i < value.length() - 1; i++) {
-			if (value.charAt(i) == '1') {
+		for (int i = 0; i < value.length(); i++) {
+			if (value.charAt(i) != '0') {
 				result = Math.pow(2, p);
 				sum += result;
 			}
