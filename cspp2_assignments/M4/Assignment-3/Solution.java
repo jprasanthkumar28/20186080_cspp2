@@ -25,6 +25,13 @@ public final class Solution {
             System.out.println(res);
         }
     }
+    /**
+     * { function_description }
+     *
+     * @param      value  The value
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static long binaryToDecimal(final String value) {
         double  result;
         int sum = 0;
