@@ -26,7 +26,7 @@ public final class Solution {
         }
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      value  The value
      *
