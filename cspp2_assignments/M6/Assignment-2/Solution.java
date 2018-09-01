@@ -27,10 +27,10 @@ final class Solution {
 	// write ypur code here
         for (int i =0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (Math.abs(a[i][j]-100) < 100) {
+                if (a[i][j] < 50) {
                     a[i][j] = 0;
                 }
-                else if ((Math.abs(a[i][j]-100) >= 50) && (Math.abs(a[i][j]-100) <=149)) {
+                else if ((a[i][j] >= 50) && (a[i][j]-100) <=149) {
                     a[i][j] = 100;
                 }
             }
