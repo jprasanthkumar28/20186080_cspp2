@@ -31,7 +31,7 @@ final class Solution {
             }
             // System.out.println(Arrays.toString(charArray));
         }
-	// write your code here
+    // write your code here
         return charArray;
     }
     /**
