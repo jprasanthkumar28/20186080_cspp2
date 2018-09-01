@@ -33,10 +33,15 @@ final class Solution {
                 else if ((a[i][j] >= 50) && (a[i][j]-100) <=149) {
                     a[i][j] = 100;
                 }
-            }
+                else if ((a[i][j] >= 200) && (a[i][j]-100) <=249) {
+                    a[i][j] = 100;
+                }
+                else if ((a[i][j] >= 300) && (a[i][j]-100) <=349) {
+                    a[i][j] = 100;
+                }
 
         }
-        return a;
+    }return a;
 	
     }
     /**
