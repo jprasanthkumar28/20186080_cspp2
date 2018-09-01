@@ -28,7 +28,7 @@ public final class Solution {
                         // System.out.println(i);
                         // System.out.println(count);
                         if (count > 0) {
-                            System.out.print(i + " ");
+                            System.out.println(i);
                             break;
                         }
                     } 
