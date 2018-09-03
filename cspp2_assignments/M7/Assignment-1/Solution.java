@@ -31,13 +31,19 @@ class InputValidator {
 }
 /**
  * Class for Solution.
-*/
+ */
 public final class Solution {
+   /**
+    * Construction.
+    */ 
+    public Solution() {
+
+    }
     /**
     * main method as driver program.
     * @param args is the parameter for this method
     */
-    public static void main(final String[] args) {  
+    public static void main(final String[] args) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
         InputValidator i = new InputValidator(input);
