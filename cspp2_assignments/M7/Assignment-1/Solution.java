@@ -36,7 +36,7 @@ public final class Solution {
    /**
     * Construction.
     */ 
-    public Solution() {
+    Solution() {
 
     }
     /**
