@@ -3,7 +3,7 @@ import java.util.Scanner;
  * @author Prasanth...
  */
 class InputValidator {
-    /*
+    /**
      * Write the atrributes and methods for InputValidator
      */
     private String input;
@@ -35,7 +35,7 @@ class InputValidator {
 public final class Solution {
    /**
     * Construction.
-    */ 
+    */
     private Solution() {
 
     }
