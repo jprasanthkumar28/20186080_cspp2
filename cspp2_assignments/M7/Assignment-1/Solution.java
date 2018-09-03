@@ -16,7 +16,7 @@ class InputValidator {
         this.input = str;
     }
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @return     { description_of_the_return_value }
      */
@@ -32,8 +32,7 @@ class InputValidator {
 /**
  * Class for Solution.
 */
-public final class Solution
-{
+public final class Solution {
     public static void main(final String args[]) {
         Scanner s = new Scanner(System.in);
         String input = s.next();
