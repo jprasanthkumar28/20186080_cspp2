@@ -134,7 +134,7 @@ public final class List {
             }
             count--;
         } else {
-            System.out.println("IndexOutOfBoundsException");
+            System.out.println("Invalid Position Exception");
         }
     }
 
