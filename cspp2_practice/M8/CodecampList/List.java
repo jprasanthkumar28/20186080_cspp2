@@ -62,7 +62,7 @@ public final class List {
      */
     private int[] array;
     /**
-     * { var_description }
+     * { var_description }.
      */
     private int count;
     /**
@@ -106,7 +106,7 @@ public final class List {
         }
     }
 
-    /*
+    /**
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
@@ -234,18 +234,6 @@ public final class List {
         }
         return -1;
     }
-
-    // public void addAll(final int[] item) {
-
-    // }
-
-    // public void add(final int index, final int item) {
-
-    // }
-    // public int count(final int item) {
-    //     return 1;
-    // }
-
     /**
      * { function_description }.
      *
