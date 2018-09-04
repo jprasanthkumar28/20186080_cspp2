@@ -229,6 +229,18 @@ public class List {
         return -1;
     }
 
+    public void addAll(int[] item) {
+
+    }
+
+    public void add(int index, int item) {
+
+    }
+    
+    public int count(int item) {
+        return 1;
+    }
+
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
