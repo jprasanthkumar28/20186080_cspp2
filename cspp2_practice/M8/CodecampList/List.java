@@ -279,7 +279,7 @@ public final class List {
                 System.out.println(l.indexOf(Integer.parseInt(tokens[1])));
                 break;
                 case "get":
-                System.out.println(l.get(Integer.parseInt(tokens[1])));
+                // System.out.println(l.get(Integer.parseInt(tokens[1])));
                 int n = l.get(Integer.parseInt(tokens[1]));
                 if (n != -1) {
                     System.out.println(n);
