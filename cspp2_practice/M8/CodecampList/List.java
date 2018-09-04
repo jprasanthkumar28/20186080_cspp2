@@ -1,7 +1,8 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-// import java.util.Arrays;
-
+/**
+ *@author Prasanth...
+*/
 public final class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -61,6 +62,7 @@ public final class List {
      */
     private int[] array;
     private int count;
+    private static final int TEN = 10;
     /**
      * Constructs the object.
      */
@@ -76,7 +78,7 @@ public final class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        array = new int[10];
+        array = new int[TEN];
         count = 0;
     }
     /**
@@ -92,7 +94,7 @@ public final class List {
     public void add(final int item) {
 
         //Inserts the specified element at the end of the list.
-        if ( count < 10) {
+        if (count < TEN) {
             array[count] = item;
             count++;
         }
@@ -125,7 +127,7 @@ public final class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index >= 0 && index < count) {
@@ -227,19 +229,19 @@ public final class List {
         return -1;
     }
 
-    public void addAll(final int[] item) {
+    // public void addAll(final int[] item) {
 
-    }
+    // }
 
-    public void add(final int index, final int item) {
+    // public void add(final int index, final int item) {
 
-    }
-    public int count(final int item) {
-        return 1;
-    }
+    // }
+    // public int count(final int item) {
+    //     return 1;
+    // }
 
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      args  The arguments
      */
@@ -288,6 +290,7 @@ public final class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+                default:
             }
         }
     }
