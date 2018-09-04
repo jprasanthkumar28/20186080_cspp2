@@ -205,7 +205,7 @@ public final class List {
      *
      * @param      item  The item
      *
-     * @return     { description_of_the_return_value }
+     * @return     { description_of_the_return_value }.
      */
     public boolean contains(final int item) {
         // Replace the code below
