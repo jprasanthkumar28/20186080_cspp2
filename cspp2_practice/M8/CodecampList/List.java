@@ -1,8 +1,8 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 
-public class List {
+public final class List {
     //Implement all the methods mentioned to build a ListADT
 
     /*
@@ -48,7 +48,7 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
 
     // declare a private int size
@@ -77,7 +77,6 @@ public class List {
         array = new int[10];
         count = 0;
     }
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.
@@ -86,13 +85,13 @@ public class List {
      * Is it the same as the end of the array?
      * Think about how you can use the size variable to add item
      * to the list.
-     * 
+     *
      * The method returns void (nothing)
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
         if ( count < 10) {
-            array[count] = item;
+            array [count] = item;
             count++;
         }
     }
@@ -113,7 +112,7 @@ public class List {
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -132,11 +131,11 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if (index >=0 && index < count) {
-            for(int i = index; i < count - 1; i++){
-                array[i] = array[i + 1];
+        if (index >= 0 && index < count) {
+            for (int i = index; i < count - 1; i++) {
+                array [i] = array[i + 1];
             }
-            count --;
+            count--;
         } else {
             System.out.println("IndexOutOfBoundsException");
         }
@@ -170,7 +169,7 @@ public class List {
      * System.out.println(l);
      * This statement is a shortcut for
      * System.out.println(l.toString());
-     * 
+     *
      * So, implement the toString method to display the items
      * in the list in the square brackets notation.
      * i.e., if the list has numbers 1, 2, 3
@@ -192,14 +191,13 @@ public class List {
         return s;
         // return Arrays.toString(array);
     }
-    
     /*
      * Contains return true if the list has
      * the item passed as an argument to the method
      * So, iterate through the list and return true if
      * the item exists and otherwise false
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         // for (int element : array) {
         //     if (element == item) {
@@ -215,7 +213,7 @@ public class List {
     }
 
     /*
-     * Returns the index of the first occurrence 
+     * Returns the index of the first occurrence
      * of the specified element in this list,
      * or -1 if this list does not contain the element.
      */
@@ -229,19 +227,18 @@ public class List {
         return -1;
     }
 
-    public void addAll(int[] item) {
+    public void addAll(final int[] item) {
 
     }
 
-    public void add(int index, int item) {
+    public void add(final int index, final int item) {
 
     }
-    
-    public int count(int item) {
+    public int count(final int item) {
         return 1;
     }
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
