@@ -61,6 +61,9 @@ public final class List {
      * class variables with some default values.
      */
     private int[] array;
+    /**
+     * { var_description }
+     */
     private int count;
     /**
      * { var_description }.
