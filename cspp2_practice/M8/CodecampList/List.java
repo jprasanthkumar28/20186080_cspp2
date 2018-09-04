@@ -62,6 +62,9 @@ public final class List {
      */
     private int[] array;
     private int count;
+    /**
+     * { var_description }.
+     */
     private static final int TEN = 10;
     /**
      * Constructs the object.
