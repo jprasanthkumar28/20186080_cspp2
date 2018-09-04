@@ -4,7 +4,7 @@ import java.util.Scanner;
  *@author Prasanth...
 */
 public final class List {
-    //Implement all the methods mentioned to build a ListADT
+    //Implement all the methods mentioned to build a ListADT.
 
     /*
      * The goal for the list is to store items.
