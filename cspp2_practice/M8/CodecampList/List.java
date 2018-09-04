@@ -106,12 +106,17 @@ public final class List {
         }
     }
 
-    /**
+    /*
      * The size method returns the value of the size.
      * The purpose of the method is to announce the size of the list
      * to the objects outside the list
      *
      * The method returns an int. Empty list should return 0.
+     */
+    /**
+     * { function_description }.
+     *
+     * @return     { description_of_the_return_value }.
      */
     public int size() {
         // replace the code below to implement the size method
