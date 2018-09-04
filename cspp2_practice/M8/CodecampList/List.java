@@ -32,7 +32,7 @@ public final class List {
     // don't create the array yet using new
     // that's the job of the List constructor
 
-    /*
+    /**
      * What are the other class variables needed for creating a list?
      * How about keeping track of the size of the list?
      * If you add 2 items to the list then the size should be 2.
@@ -61,7 +61,9 @@ public final class List {
      * class variables with some default values.
      */
     private int[] array;
+    
     private int count;
+        
     private static final int TEN = 10;
     /**
      * Constructs the object.
