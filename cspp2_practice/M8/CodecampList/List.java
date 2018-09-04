@@ -61,9 +61,7 @@ public final class List {
      * class variables with some default values.
      */
     private int[] array;
-    
     private int count;
-        
     private static final int TEN = 10;
     /**
      * Constructs the object.
