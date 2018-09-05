@@ -37,11 +37,6 @@ public final class Fibonacci {
     /**
      * { var_description }.
      */
-    private static int f = 0;
-    /**
-     * { var_description }.
-     */
-    private static int s = 1;
     /**
      * { function_description }.
      *
@@ -50,6 +45,7 @@ public final class Fibonacci {
      * @return     { description_of_the_return_value }
      */
     private static List fib(final int n) {
+        int f = 0, s = 1;
         // todo - complete this method
         List l = new List(n);
         for (int i = 1; i <= n; i++) {
