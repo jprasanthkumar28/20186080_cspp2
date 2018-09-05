@@ -58,8 +58,8 @@ public class Fibonacci {
      */
     public static void main(final String[] args) {
 
-        Scanner s = new Scanner(System.in);
-        int n = s.nextInt();
+        Scanner s1 = new Scanner(System.in);
+        int n = s1.nextInt();
         System.out.println(fib(n));
     }
 }
