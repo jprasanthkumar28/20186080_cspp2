@@ -32,7 +32,7 @@ public class Fibonacci
         // todo - complete this method
         List l = new List();
         for (int i = 1; i <=n; i++) {
-            l.add(s);
+            l.add(f);
             int t = f + s;
             f = s;
             s = t;
