@@ -27,8 +27,12 @@ public final class Fibonacci {
      *
      * Look for the hint.txt if some of the testcases fail.
      */
+
+    /**
+     * Constructs the object.
+     */
     private Fibonacci() {
-        
+
     }
     private static int f = 0;
     /**
