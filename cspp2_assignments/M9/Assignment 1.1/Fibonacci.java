@@ -21,14 +21,24 @@ import java.util.Scanner;
  */
 public final class Fibonacci {
     /**
-     * fib is a static method takes a argument n
-     * n is the count of the fibonacci numbers to be generated.
-     * The method returns a List with the n fibonacci numbers.
+     * fib is a static method takes a argument n n is the count of the fibonacci
+     * numbers to be generated. The method returns a List with the n fibonacci
+     * numbers.
      *
      * Look for the hint.txt if some of the testcases fail.
      */
     private static int f = 0;
+    /**
+     * { var_description }.
+     */
     private static int s = 1;
+    /**
+     * { function_description }.
+     *
+     * @param      n     { parameter_description }
+     *
+     * @return     { description_of_the_return_value }
+     */
     public static List fib(final int n) {
         // todo - complete this method
         List l = new List(n);
