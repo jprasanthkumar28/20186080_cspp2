@@ -35,9 +35,6 @@ public final class Fibonacci {
 
     }
     /**
-     * { var_description }.
-     */
-    /**
      * { function_description }.
      *
      * @param      n     { parameter_description }
