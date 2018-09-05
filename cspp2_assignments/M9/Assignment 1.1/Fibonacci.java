@@ -39,7 +39,7 @@ public final class Fibonacci {
      *
      * @return     { description_of_the_return_value }
      */
-    public static List fib(final int n) {
+    static List fib(final int n) {
         // todo - complete this method
         List l = new List(n);
         for (int i = 1; i <= n; i++) {
@@ -51,7 +51,13 @@ public final class Fibonacci {
         return l;
     }
 
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
     public static void main(final String[] args) {
+
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
         System.out.println(fib(n));
