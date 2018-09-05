@@ -79,6 +79,11 @@ public class List {
         size = 0;
     }
 
+    public List(int n) {
+        size = 0;
+        list = new int[n];
+    }
+
     /*
      * Overloaded constructor with list capacity as argument
      * The default constructor sets the list capacity to 10
@@ -87,16 +92,15 @@ public class List {
      * There will be some clients of the ADT that will require
      * the list to contain n elements which is known
      * at the time of creating the list.
-     * 
+     *
      * The overloaded constructor is a way to initialize a list with
      * a list capacity of n items where n is given as an argument to
      * constructor.
-     * 
+     *
      */
 
     // todo - add an overloaded constructor here
 
-    
     /*
      * The add method does what the name suggests.
      * Add an int item to the list.

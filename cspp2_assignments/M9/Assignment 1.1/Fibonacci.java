@@ -30,8 +30,8 @@ public class Fibonacci
     static int s = 1;
     public static List fib(int n) {
         // todo - complete this method
-        List l = new List();
-        for (int i = 1; i <=n; i++) {
+        List l = new List(n);
+        for (int i = 1; i <= n; i++) {
             l.add(f);
             int t = f + s;
             f = s;
