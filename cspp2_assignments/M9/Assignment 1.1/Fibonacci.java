@@ -34,6 +34,9 @@ public final class Fibonacci {
     private Fibonacci() {
 
     }
+    /**
+     * { var_description }.
+     */
     private static int f = 0;
     /**
      * { var_description }.
