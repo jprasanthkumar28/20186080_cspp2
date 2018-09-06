@@ -267,10 +267,51 @@ public class List {
     }
    /*Inserts all the elements of specified int 
     array to the end of list*/
-    public void addAll(int items[])
-    {
-        // write the logic 
-         if (size + items.length >= list.length) {
+    public void add(final int index, final int item) {
+        if (index > size() || index < 0) {
+            System.out.println("Negative Index Exception");
+        } else {
+            for (int i = (size() - 1); i >= index; i--) {
+                this.list[i + 1] = this.list[i];
+            }
+            this.list[index] = item;
+            size += 1;
+        }
+    }
+
+
+    
+
+     /* 
+        Inserts the specified element at the specified index 
+	by moving all the elements to the right.
+        The method returns void (nothing)
+     */
+    /**
+     * { function_description }.
+     *
+     * @param      item  The item
+     *
+     * @return     { description_of_the_return_value }
+     */
+    public int count(final int item) {
+        int count = 0;
+        for (int i = 0; i < size(); i++) {
+            if (this.list[i] == item) {
+                count += 1;
+            }
+        }
+    return count;
+    }
+
+    /**
+     * Adds all.
+     *
+     * @param      items  The items
+     */
+
+    public void addAll(final int[] items) {
+        if (items.length + size() >= list.length) {
             // resize();
         }
         for (int i = 0; i < items.length; i++) {
@@ -278,37 +319,6 @@ public class List {
         }
     }
 
-     /* 
-        Inserts the specified element at the specified index 
-	by moving all the elements to the right.
-        The method returns void (nothing)
-     */
-    public void add(int index,int item) {
-         // write the logic 
-        if (index >= 0 && index < size) {
-            for (int i = index;i < size + 1; i++) {
-                list[i + 1] = list[i];
-            }
-            list[index] = item;
-            size++;
-        } else {
-            System.out.println("List Full");
-        }
-    }
-    
-    /* Returns the count of occurances of a given item in the list*/
-    public int count(int item)
-    {
-         // write the logic 
-        int value = 0;
-        for (int i = 0; i < size; i++) {
-            if (item == list[i]) {
-                value++;
-            }
-        }
-        return value;
-        // return 0;
-    }
 
 
 	public static void main(String[] args) {
