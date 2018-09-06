@@ -267,9 +267,9 @@ public class List {
     }
    /*Inserts all the elements of specified int 
     array to the end of list*/
-    public void resize(int n) {
+    public void resize() {
         list = Arrays.copyOf(list, list.length * 2);
-        list[size++] = n;
+        // list[size++] = n;
     }
 
     public void addAll(final int[] items) {
@@ -288,9 +288,9 @@ public class List {
      * @param      item   The item
      */
     public void add(final int index, final int item) {
-        if (index >= 0 && index < size) {
-            for (int i = index;i < size + 1; i++) {
-                list[i + 1] = list[i];
+        if (index >= 0) {
+            for (int i = size;i < index; i--) {
+                list[i] = list[i + 1];
             }
             list[index] = item;
             size++;
