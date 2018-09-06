@@ -233,7 +233,7 @@ public class List {
      */
     public String toString() {
         if(size == 0)
-            return "";
+            return "[]";
         String str = "[";
         int i = 0;
         for(i = 0; i < size - 1; i++) {
@@ -268,16 +268,19 @@ public class List {
    /*Inserts all the elements of specified int 
     array to the end of list*/
     public void add(final int index, final int item) {
-        if (index >= 0 && index < size) {
-            for (int i = index;i < size + 1; i++) {
-                list[i + 1] = list[i];
-            }
-            list[index] = item;
-            size++;
+        if (index > size() || index < 0) {
+            System.out.println("Negative Index Exception");
         } else {
-            System.out.println("List Full");
+            for (int i = (size() - 1); i >= index; i--) {
+                this.list[i + 1] = this.list[i];
+            }
+            this.list[index] = item;
+            size += 1;
         }
     }
+
+
+
 
      /* 
         Inserts the specified element at the specified index 
