@@ -91,7 +91,7 @@ public class List {
      *
      * @param      capacity  The capacity
      */
-    public List(int capacity) {
+    public List(final int capacity) {
         size = 0;
         list = new int[capacity];
     }
@@ -105,7 +105,7 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the zelist.
         list[size++] = item;
     }
@@ -129,7 +129,8 @@ public class List {
      * with the contents of the original array.
      *
      * TODO
-     * Create a method called resize(). Resize should create an new array that is
+     * Create a method called resize().
+     * Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
      * 
@@ -159,7 +160,7 @@ public class List {
      * The remove method does what the name suggests.
      * Removes an int item, specified by the index argument, from the list
      * It also does an additional step.
-     * Think about what happens when 
+     * Think about what happens when
      * an item is removed from the middle of the list
      * It creates a hole in the list, right?
      * This would mean, all the items that are
@@ -184,8 +185,8 @@ public class List {
     public void remove(final int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        if(index >= 0 && index < size) {
-            for(int i = index; i < size - 1; i++) {
+        if (index >= 0 && index < size) {
+            for (int i = index; i < size - 1; i++) {
                 list[i] = list[i + 1];
             }
             size--;
@@ -231,11 +232,11 @@ public class List {
      * @return     String representation of the object.
      */
     public String toString() {
-        if(size == 0)
+        if (size == 0)
             return "[]";
         String str = "[";
         int i = 0;
-        for(i = 0; i < size - 1; i++) {
+        for (i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
@@ -244,11 +245,10 @@ public class List {
         }
         return str;
     }
-    
     /**
      * Contains return true if the list has the item passed as an argument to
      * the method So, iterate through the list and return true if the item
-     * exists and otherwise false
+     * exists and otherwise false.
      *
      * @param      item  The item
      *
@@ -267,14 +267,14 @@ public class List {
      * @return     { description_of_the_return_value }
      */
     public int indexOf(final int item) {
-        for(int i = 0; i < size; i++) {
-            if(item == list[i])
+        for (int i = 0; i < size; i++) {
+            if (item == list[i])
                 return i;
         }
         return -1;
     }
    /**
-    Inserts all the elements of specified int array to the end of list
+    Inserts all the elements of specified int array to the end of list.
    
     @param      index  The index
     @param      item   The item
@@ -316,6 +316,9 @@ public class List {
     return count;
     }
 
+    /**
+     * { function_description }.
+     */
     public void resize() {
         list = Arrays.copyOf(list, list.length * 2);
         // list[size++] = n;
@@ -335,7 +338,12 @@ public class List {
         }
     }
 
-    public static void main(String[] args) {
+    /**
+     * { function_description }.
+     *
+     * @param      args  The arguments
+     */
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -350,14 +358,14 @@ public class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                case "add":
-                if((tokens.length) == 2){
+                if ((tokens.length) == 2){
                 String[] t = tokens[1].split(",");
-                if(t.length == 1){
+                if (t.length == 1){
                     l.add(Integer.parseInt(tokens[1]));
                 }
-                else{
+                else {
                     if(t.length > 1)
-                        l.add(Integer.parseInt(t[0]),Integer.parseInt(t[1]));
+                        l.add(Integer.parseInt(t[0]), Integer.parseInt(t[1]));
                     }
                 }
                 break;
@@ -365,10 +373,10 @@ public class List {
                 System.out.println(l.count(Integer.parseInt(tokens[1])));
                 break;
                 case "addAll":
-                if (tokens.length == 2){
+                if (tokens.length == 2) {
                 String[] t1 = tokens[1].split(",");
-                int temp[] = new int[t1.length];
-                for(int i = 0; i<temp.length; i++) {
+                int[] temp = new int[t1.length];
+                for(int i = 0; i < temp.length; i++) {
                     temp[i] = Integer.parseInt(t1[i]);
                 }
                 l.addAll(temp);
@@ -398,6 +406,7 @@ public class List {
                 case "contains":
                 System.out.println(l.contains(Integer.parseInt(tokens[1])));
                 break;
+                default:
             }
         }
     }
