@@ -1,9 +1,18 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 /**
+ * @author Prasanth...
+ */
+/**
  * Class for solution.
  */
 public final class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+        //Iam not using this Constructor
+    }
     public static void main(final String[] args) {
 
         // create an object of the list to invoke methods on it
