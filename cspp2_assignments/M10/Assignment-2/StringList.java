@@ -258,7 +258,7 @@ public class StringList implements StringListInterface{
      */
     public String toString() {
         if (size == 0) {
-            return "";
+            return "[]";
         }
         String str = "[";
         int i = 0;
@@ -266,9 +266,9 @@ public class StringList implements StringListInterface{
             str = str + list[i] + ",";
         }
         str = str + list[i] + "]";
-        // if (get(0) == 0) {
-        //     str += "\nInvalid Position Exception";
-        // }
+        if (get(0).equals(0)) {
+            str += "\nInvalid Position Exception";
+        }
         return str;
     }
     /**
