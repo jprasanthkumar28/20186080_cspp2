@@ -1,5 +1,5 @@
 import java.io.BufferedInputStream;
-import java.util.Scanner;
+import java.util.*;
 
 public class List {
 	//Implement all the methods mentioned to build a ListADT
@@ -304,6 +304,10 @@ public class List {
     return count;
     }
 
+    public void resize() {
+        list = Arrays.copyOf(list, list.length * 2);
+        // list[size++] = n;
+    }
     /**
      * Adds all.
      *
@@ -312,7 +316,7 @@ public class List {
 
     public void addAll(final int[] items) {
         if (items.length + size() >= list.length) {
-            // resize();
+            resize();
         }
         for (int i = 0; i < items.length; i++) {
             add(items[i]);
