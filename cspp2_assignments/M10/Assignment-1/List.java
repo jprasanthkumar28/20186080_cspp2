@@ -65,6 +65,10 @@ public class List {
      * some default values.
      */
     private static final int TEN = 10;
+
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here?
