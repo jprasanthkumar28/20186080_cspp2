@@ -267,55 +267,61 @@ public class List {
     }
    /*Inserts all the elements of specified int 
     array to the end of list*/
-    public void resize() {
-        list = Arrays.copyOf(list, list.length * 2);
-        // list[size++] = n;
-    }
-
-    public void addAll(final int[] items) {
-        if (size + items.length >= list.length) {
-            // resize();
-        }
-        for (int i = 0; i < items.length; i++) {
-            add(items[i]);
-        }
-    }
-
-    /**
-     * { function_description }
-     *
-     * @param      index  The index
-     * @param      item   The item
-     */
     public void add(final int index, final int item) {
-        if (index >= 0) {
-            for (int i = size;i < index; i--) {
-                list[i] = list[i + 1];
-            }
-            list[index] = item;
-            size++;
+        if (index > size() || index < 0) {
+            System.out.println("Negative Index Exception");
         } else {
-            System.out.println("List Full");
+            for (int i = (size() - 1); i >= index; i--) {
+                this.list[i + 1] = this.list[i];
+            }
+            this.list[index] = item;
+            size += 1;
         }
     }
 
+
+
+
+     /* 
+        Inserts the specified element at the specified index 
+    by moving all the elements to the right.
+        The method returns void (nothing)
+     */
     /**
-     * { function_description }
+     * { function_description }.
      *
      * @param      item  The item
      *
      * @return     { description_of_the_return_value }
      */
     public int count(final int item) {
-        int value = 0;
-        for (int i = 0; i < size; i++) {
-            if (item == list[i]) {
-                value++;
+        int count = 0;
+        for (int i = 0; i < size(); i++) {
+            if (this.list[i] == item) {
+                count += 1;
             }
         }
-        return value;
+    return count;
     }
 
+    public void resize() {
+        list = Arrays.copyOf(list, list.length * 2);
+        // list[size++] = n;
+    }
+    /**
+     * Adds all.
+     *
+     * @param      items  The items
+     */
+
+    public void addAll(final int[] items) {
+        if (items.length + size() >= list.length) {
+            resize();
+        }
+        for (int i = 0; i < items.length; i++) {
+            add(items[i]);
+        }
+    }
 
 	public static void main(String[] args) {
         // create an object of the list to invoke methods on it
