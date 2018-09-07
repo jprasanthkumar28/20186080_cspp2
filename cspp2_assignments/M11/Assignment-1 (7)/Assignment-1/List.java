@@ -2,6 +2,10 @@ import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
 
+/**
+ * List class for LISTADT 
+ * @author Prasanth...
+ */
 public class List {
     //Implement all the methods mentioned to build a ListADT
 
@@ -60,6 +64,9 @@ public class List {
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
+    /**
+     * Constructs the object.
+     */
     public List() {
 
         // what are the two variables to be initialized here? think about the
@@ -88,8 +95,8 @@ public class List {
         if ( count >= array.length) {
             resize();
         }
-            array[count] = item;
-            count++;
+        array[count] = item;
+        count++;
     }
 
     /*
@@ -221,13 +228,10 @@ public class List {
         // write the logic
         if (newArray.length < array.length) {
             for (int i = 0; i < newArray.length; i++) {
-                for (int j = 0; j < array.length; j++) {
-                    if (newArray[i] == array[j]) {
-                        remove(j);
-                        j--;
-                    } else {
-                        // j++;
-                    }
+                int index = indexOf(newArray[i]);
+                while (index != -1) {
+                   remove(index);
+                    index = indexOf(newArray[i]);
                 }
             }
         }
@@ -239,24 +243,31 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    public List subList(int start, int end)
-    {
+    public List subList(int start, int end) {
     // write the logic for subList
-        List newl = new List();
-        if (start < size() || end < size()) {
-            if (start >= 0 && end >= 0 && start <= end) {
-                if (start == end) {
-                    return new List();
-                } else {
-                    for (int i = start; i < end; i++) {
-                        newl.add(array[i]);
-                    }
-                    return newl;
-                }
-            }
+        // List newl = new List();
+        // if (start >= end || start <= 0 || end <= 0) {
+        //     System.out.println("Index Out of Bounds Exception");
+        //     return null;
+        // } else {
+        //     List newList = new List(end - start);
+        //     for (int i = start; i < end; i++) {
+        //         newList.add(this.get(i));
+        //     }
+        // }
+        if (start <= 0 || end < 0 || start > end || start > count || end > count) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
         }
-        System.out.println("Index Out of Bounds Exception");
-        return null;
+        if (start == end && start > count) {
+            System.out.println("Index Out of Bounds Exception");
+            return null;
+        }
+        List list1 = new List();
+        for (int i = start; i < end; i++) {
+            list1.add(array[i]);
+        }
+        return list1;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
@@ -265,13 +276,14 @@ public class List {
     public boolean equals(List list )
     {
     // Replace the code below
-        int j = 0;
-        for (int i = 0;i < list.count; i++) {
-            if (contains(list.get(i))) {
-                j++;
-            }
-        }
-        return (j == list.count);
+        return list.toString().equals(this.toString());
+        // int j = 0;
+        // for (int i = 0;i < list.count; i++) {
+        //     if (contains(list.get(i))) {
+        //         j++;
+        //     }
+        // }
+        // return (j == list.count);
     }
     /*
     * Removes all the elements from list
