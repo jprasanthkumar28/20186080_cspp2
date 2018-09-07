@@ -241,11 +241,12 @@ public class List {
     // write the logic for subList
         int[] list = new int[end - start];
         List newl = new List();
+
         if ((start == end) && (start < 0 && end < 0)) {
             System.out.println("Index Out of Bounds Exception");
             return null;
-        } if (start == end) {
-            return newl;
+        } else if (start == end) {
+            return new List();
         } else if (start < 0 || end < 0 || start > array.length || end > array.length) {
             System.out.println("Index Out of Bounds Exception");
             return null;
