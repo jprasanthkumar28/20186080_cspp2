@@ -224,6 +224,9 @@ public class List {
                 for (int j = 0; j < array.length; j++) {
                     if (newArray[i] == array[j]) {
                         remove(j);
+                        j--;
+                    } else {
+                        j++;
                     }
                 }
             }
