@@ -90,6 +90,11 @@ public class List {
      *
      * The method returns void (nothing)
      */
+    /**
+     * add the item to list.
+     *
+     * @param      item  The item
+     */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         if ( count >= array.length) {
@@ -105,6 +110,11 @@ public class List {
      *
      * The method returns an int. Empty list should return 0.
      *
+     */
+    /**
+     * to know the size of a list.
+     *
+     * @return     the size of the list.
      */
     public int size() {
         // replace the code below to implement the size method
@@ -124,6 +134,11 @@ public class List {
      * removed item, to the left So, the new array looks like this. array =
      * [1,3,0,0,0,0,0,0,0,0] The method returns void (nothing)
      *
+     */
+    /**
+     * to remove the values in list at specified index.
+     *
+     * @param      index  The index
      */
     public void remove(int index) {
         // write the logic for remove here. Think about what to do to the size
@@ -147,6 +162,13 @@ public class List {
      * exist. How do we check if the position is greater than the number of
      * items in the list? Would size variable be useful?
      */
+    /**
+     * to get the list.
+     *
+     * @param      index  The index
+     *
+     * @return     the int value
+     */
     public int get(int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < count) {
@@ -167,6 +189,11 @@ public class List {
      * the string [1,2,3] Caution: The array may be having other elements
      * Example: [1,2,3,0,0,0,0,0,0,0] toString should only return the items in
      * the list and not all the elements of the array.
+     */
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
      */
     public String toString() {
         // Replace the code below
@@ -189,6 +216,13 @@ public class List {
      * the method So, iterate through the list and return true if the item
      * exists and otherwise false
      */
+    /**
+     * to check the list whether list contains items or not.
+     *
+     * @param      item  The item
+     *
+     * @return     true if exists or false.
+     */
     public boolean contains(int item) {
         // Replace the code below
         return (indexOf(item) >= 0);
@@ -196,6 +230,13 @@ public class List {
     /*
      * Returns the index of the first occurrence of the specified element in
      * this list, or -1 if this list does not contain the element.
+     */
+    /**
+     * Searches for the first match.
+     *
+     * @param      item  The item
+     *
+     * @return     the index index of the item.
      */
     public int indexOf(int item) {
         // Replace the code below
@@ -206,6 +247,9 @@ public class List {
         } 
         return -1;
     }
+    /**
+     * to resize the list.
+     */
     public void resize() {
         array = Arrays.copyOf(array, array.length * 2);
         // array[count++] = n;
@@ -213,6 +257,11 @@ public class List {
     /*
     Inserts all the elements of specified int array to the end of list    
     */
+    /**
+     * Adds all the items to list.
+     *
+     * @param      newArray  The new array
+     */
     public void addAll(int[] newArray)
     {
         // write the logic
@@ -227,6 +276,11 @@ public class List {
      Removes all of its elements that are contained in the specified int 
      array.    
     */
+     /**
+      * Removes all values in the new array.
+      *
+      * @param      newArray  The new array
+      */
     public void removeAll(int[] newArray) {
         // write the logic
         if (newArray.length < array.length) {
@@ -254,6 +308,14 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
+    /**
+     * to get the sublist.
+     *
+     * @param      start  The start
+     * @param      end    The end
+     *
+     * @return     the list of items.
+     */
     public List subList(int start, int end) {
     // write the logic for subList
         // List newl = new List();
@@ -284,6 +346,13 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
+    /**
+     * Compares two lists.
+     *
+     * @param      list  The list
+     *
+     * @return     true if lists are equal.
+     */
     public boolean equals(List list )
     {
     // Replace the code below
@@ -297,17 +366,23 @@ public class List {
         // return (j == list.count);
     }
     /*
-    * Removes all the elements from list
-    * Think about this case and make the method
-    * the simpler.
-    */
+     * Removes all the elements from list Think about this case and make the
+     * method the simpler.
+     */
+    /**
+     * clears the list.
+     */
     public void clear()
     {
     // write the logic for clear.
         count = 0;
 
     }
-
+    /**
+     * Main funciton.
+     *
+     * @param      args  The arguments
+     */
     public static void main(String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
