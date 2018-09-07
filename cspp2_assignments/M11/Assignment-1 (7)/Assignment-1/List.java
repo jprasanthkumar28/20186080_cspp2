@@ -170,6 +170,9 @@ public class List {
      */
     public String toString() {
         // Replace the code below
+        if (count == 0) {
+            return "[]";
+        }
         int i;
         String s = "[";
         for (i = 0; i < count - 1; i++) {
