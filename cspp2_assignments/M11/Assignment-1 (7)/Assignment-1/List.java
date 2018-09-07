@@ -226,7 +226,7 @@ public class List {
                         remove(j);
                         j--;
                     } else {
-                        j++;
+                        // j++;
                     }
                 }
             }
