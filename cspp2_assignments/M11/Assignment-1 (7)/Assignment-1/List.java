@@ -1,12 +1,11 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
 /**
- * List class for LISTADT 
+ * List class for LISTADT.
  * @author Prasanth...
  */
-public class List {
+public final class List {
     //Implement all the methods mentioned to build a ListADT
 
     /*
@@ -30,7 +29,6 @@ public class List {
      * This is a hard concept to understand. Discuss with your mentor.
      *
     */
-    
     // declare a private int[]
     // don't create the array yet using new
     // that's the job of the List constructor
@@ -52,18 +50,28 @@ public class List {
      * So, to keep track of the size we need a variable called size
      * Again, we use private as we don't want that size variable
      * to be accessed by the methods that are outside of the List class.
-     * 
+     *
      */
 
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
     private int[] array;
+    /**
+     * integer array variable.
+     */
     private int count;
+    /**
+     * count variable.
+     */
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
      */
+    /**
+     * integer variable.
+     */
+    private static final int TEN = 10;
     /**
      * Constructs the object.
      */
@@ -78,10 +86,9 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        array = new int[10];
+        array = new int[TEN];
         count = 0;
     }
-    
     /*
      * The add method does what the name suggests. Add an int item to the list.
      * The assumption is to store the item at the end of the list What is the
@@ -95,9 +102,9 @@ public class List {
      *
      * @param      item  The item
      */
-    public void add(int item) {
+    public void add(final int item) {
         //Inserts the specified element at the end of the list.
-        if ( count >= array.length) {
+        if (count >= array.length) {
             resize();
         }
         array[count] = item;
@@ -140,14 +147,14 @@ public class List {
      *
      * @param      index  The index
      */
-    public void remove(int index) {
+    public void remove(final int index) {
         // write the logic for remove here. Think about what to do to the size
         // variable.
         if (index >= 0 && index < count) {
-            for(int i = index; i < size(); i++){
+            for (int i = index; i < size(); i++) {
                 array[i] = array[i + 1];
             }
-            count --;
+            count--;
         } else {
             System.out.println("IndexOutOfBoundsException");
         }
@@ -169,7 +176,7 @@ public class List {
      *
      * @return     the int value
      */
-    public int get(int index) {
+    public int get(final int index) {
         // Replace the code below to write the code for get
         if (index >= 0 && index < count) {
             return array[index];
@@ -223,7 +230,7 @@ public class List {
      *
      * @return     true if exists or false.
      */
-    public boolean contains(int item) {
+    public boolean contains(final int item) {
         // Replace the code below
         return (indexOf(item) >= 0);
     }
@@ -238,7 +245,7 @@ public class List {
      *
      * @return     the index index of the item.
      */
-    public int indexOf(int item) {
+    public int indexOf(final int item) {
         // Replace the code below
         for (int i = 0; i < count; i++) {
             if (array[i] == item) {
@@ -262,8 +269,7 @@ public class List {
      *
      * @param      newArray  The new array
      */
-    public void addAll(int[] newArray)
-    {
+    public void addAll(final int[] newArray) {
         // write the logic
         if (count + newArray.length >= array.length) {
             resize();
@@ -281,7 +287,7 @@ public class List {
       *
       * @param      newArray  The new array
       */
-    public void removeAll(int[] newArray) {
+    public void removeAll(final int[] newArray) {
         // write the logic
         if (newArray.length < array.length) {
             for (int i = 0; i < newArray.length; i++) {
@@ -316,7 +322,7 @@ public class List {
      *
      * @return     the list of items.
      */
-    public List subList(int start, int end) {
+    public List subList(final int start, final int end) {
     // write the logic for subList
         // List newl = new List();
         // if (start >= end || start <= 0 || end <= 0) {
@@ -353,8 +359,7 @@ public class List {
      *
      * @return     true if lists are equal.
      */
-    public boolean equals(List list )
-    {
+    public boolean equals(List list ) {
     // Replace the code below
         return list.toString().equals(this.toString());
         // int j = 0;
@@ -372,18 +377,16 @@ public class List {
     /**
      * clears the list.
      */
-    public void clear()
-    {
+    public void clear() {
     // write the logic for clear.
         count = 0;
-
     }
     /**
      * Main funciton.
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // create an object of the list to invoke methods on it
         List l = new List();
 
@@ -466,7 +469,7 @@ public class List {
                     if (tokens.length == 2) {
                         String[] lt = tokens[1].split(",");
                         List l2 = new List();
-                        for (int k = 0; k < lt.length; k++ ) {
+                        for (int k = 0; k < lt.length; k++) {
                             l2.add(Integer.parseInt(lt[k]));
                         }
                         System.out.println(l.equals(l2));
