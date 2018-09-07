@@ -221,14 +221,12 @@ public class List {
         // write the logic
         if (newArray.length < array.length) {
             for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < array.length;j++) {
-                if (newArray[i] == array[j]) {
-                    remove(j);
-                }    
-            }    
-        }
-        
-            
+                for (int j = 0; j < array.length;j++) {
+                    if (newArray[i] == array[j]) {
+                        remove(j);
+                    }
+                }
+            }
         }
     }
     /*
