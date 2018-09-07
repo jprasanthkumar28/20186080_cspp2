@@ -217,15 +217,17 @@ public class List {
      Removes all of its elements that are contained in the specified int 
      array.    
     */
-     public void removeAll(int[] newArray)
-     {
+    public void removeAll(int[] newArray) {
         // write the logic
         for (int i = 0; i < newArray.length; i++) {
-            if (indexOf(newArray[i]) != -1) {
-                remove(newArray[i]);
+            for (int j = 0; j < array.length;j++) {
+                if (newArray[i] == array[j]) {
+                    remove(j);
+            }    
             }
+            
         }
-     }
+    }
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
@@ -233,7 +235,7 @@ public class List {
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
-    public List subList(int start, int end) 
+    public List subList(int start, int end)
     {
     // write the logic for subList
         int[] list = new int[end - start];
@@ -243,7 +245,7 @@ public class List {
             return null;
         } if (start == end) {
             return newl;
-        }else if (start < 0 || end < 0 || start > array.length || end > array.length) {
+        } else if (start < 0 || end < 0 || start > array.length || end > array.length) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         } else if ((start >= 0 && start < end) && (end > 0 && end > start && end < array.length)) {
@@ -258,7 +260,7 @@ public class List {
     Returns a boolean indicating whether the parameter i.e a List object is
     exactly matching with the given list or not.
     */
-    public boolean equals(List list ) 
+    public boolean equals(List list )
     {
     // Replace the code below
         int j = 0;
