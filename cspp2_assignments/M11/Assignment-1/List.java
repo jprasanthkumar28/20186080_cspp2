@@ -247,9 +247,11 @@ public class List {
                 for (int i = start; i < end; i++) {
                     newl.add(array[i]);
                 }
+                return newl;
             }
         }
-        return newl;
+        System.out.println("Index Out of Bounds Exception");
+        return null;
     }
     /*
     Returns a boolean indicating whether the parameter i.e a List object is
