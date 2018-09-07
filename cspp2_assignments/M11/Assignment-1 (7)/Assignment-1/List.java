@@ -226,15 +226,23 @@ public class List {
     */
     public void removeAll(int[] newArray) {
         // write the logic
-        if (newArray.length < array.length) {
-            for (int i = 0; i < newArray.length; i++) {
-                int index = indexOf(newArray[i]);
-                while (index != -1) {
-                   remove(index);
-                    index = indexOf(newArray[i]);
+        // if (newArray.length < array.length) {
+        //     for (int i = 0; i < newArray.length; i++) {
+        //         int index = indexOf(newArray[i]);
+        //         while (index != -1) {
+        //            remove(index);
+        //             index = indexOf(newArray[i]);
+        //         }
+        //     }
+        // }
+        for (int i = 0; i < newArray.length; i++) {
+                for (int j = 0; j < count; j++) {
+                    if(newArray[i] == array[j]) {
+                        remove(j);
+                        j--;
+                    }
                 }
             }
-        }
     }
     /*
     Returns a list object containing elements, including startIndex and
