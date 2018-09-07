@@ -163,7 +163,7 @@ public class List<E> {
             }
             count--;
         } else {
-            System.out.println("IndexOutOfBoundsException");
+            System.out.println("Invalid Position Exception");
         }
     }
 
