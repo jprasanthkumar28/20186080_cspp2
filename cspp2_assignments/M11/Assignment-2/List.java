@@ -220,9 +220,9 @@ public class List<E> {
             s += array[i] + ",";
         }
         s += array[i] + "]";
-        if (get(0).equals(0)){
-            s += "\nInvalid Position Exception";
-        }
+        // if (get(0).equals(0)){
+        //     s += "\nInvalid Position Exception";
+        // }
         return s;
     }
     /*
