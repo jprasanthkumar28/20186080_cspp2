@@ -341,7 +341,7 @@ public class List<E> {
         //         newList.add(this.get(i));
         //     }
         // }
-        if (start <= 0 || end < 0 || start > end
+        if (start < 0 || end < 0 || start > end
             || start > count || end > count) {
             System.out.println("Index Out of Bounds Exception");
             return null;
