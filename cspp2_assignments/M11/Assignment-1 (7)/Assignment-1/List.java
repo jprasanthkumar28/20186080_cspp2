@@ -209,9 +209,9 @@ public class List {
         if (count + newArray.length >= array.length) {
             resize();
         }
-        for (int i = 0; i < newArray.length; i++) {
-            add(newArray[i]);
-        }
+            for (int i = 0; i < newArray.length; i++) {
+                add(newArray[i]);
+            }
     }
     /*
      Removes all of its elements that are contained in the specified int 
@@ -240,14 +240,16 @@ public class List {
     {
     // write the logic for subList
         List newl = new List();
-        if (start >= 0 && end >= 0 && start <= end) {
-            if (start == end) {
-                return new List();
-            } else {
-                for (int i = start; i < end; i++) {
-                    newl.add(array[i]);
+        if (start < size() || end < size()) {
+            if (start >= 0 && end >= 0 && start <= end) {
+                if (start == end) {
+                    return new List();
+                } else {
+                    for (int i = start; i < end; i++) {
+                        newl.add(array[i]);
+                    }
+                    return newl;
                 }
-                return newl;
             }
         }
         System.out.println("Index Out of Bounds Exception");
