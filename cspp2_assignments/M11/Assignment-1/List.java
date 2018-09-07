@@ -239,21 +239,14 @@ public class List {
     public List subList(int start, int end)
     {
     // write the logic for subList
-        int[] list = new int[end - start];
         List newl = new List();
-
-        if ((start == end) && (start < 0 && end < 0)) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        } else if (start == end) {
-            return new List();
-        } else if (start < 0 || end < 0 || start > array.length || end > array.length) {
-            System.out.println("Index Out of Bounds Exception");
-            return null;
-        } else if ((start >= 0 && start < end) && (end > 0 && end > start && end < array.length)) {
-            int a = 0;
-            for (a = start; a < end; a++) {
-                newl.add(array[a]);
+        if (start >= 0 && end >= 0 && start <= end) {
+            if (start == end) {
+                return new List();
+            } else {
+                for (int i = start; i < end; i++) {
+                    newl.add(array[i]);
+                }
             }
         }
         return newl;
