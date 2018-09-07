@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 /**
  * List class for LISTADT.
- * @author Prasanth...
+ * @author     Prasanth...
  */
 public final class List {
     //Implement all the methods mentioned to build a ListADT
@@ -56,6 +56,9 @@ public final class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    /**
+     *
+     */
     private int[] array;
     /**
      * integer array variable.
@@ -251,7 +254,7 @@ public final class List {
             if (array[i] == item) {
                 return i;
             }
-        } 
+        }
         return -1;
     }
     /**
@@ -262,7 +265,7 @@ public final class List {
         // array[count++] = n;
     }
     /*
-    Inserts all the elements of specified int array to the end of list    
+    Inserts all the elements of specified int array to the end of list
     */
     /**
      * Adds all the items to list.
@@ -279,8 +282,8 @@ public final class List {
             }
     }
     /*
-     Removes all of its elements that are contained in the specified int 
-     array.    
+     Removes all of its elements that are contained in the specified int
+     array.
     */
      /**
       * Removes all values in the new array.
@@ -310,7 +313,7 @@ public final class List {
     /*
     Returns a list object containing elements, including startIndex and
     excluding endIndex. The first parameter indicates the startIndex and the
-    second parameter indicates the endIndex. Returns null and print 
+    second parameter indicates the endIndex. Returns null and print
     "Index Out of Bounds Exception" if any of values start and end are negative
     and also if start is greater than end.
     */
@@ -334,7 +337,8 @@ public final class List {
         //         newList.add(this.get(i));
         //     }
         // }
-        if (start <= 0 || end < 0 || start > end || start > count || end > count) {
+        if (start <= 0 || end < 0 || start > end
+            || start > count || end > count) {
             System.out.println("Index Out of Bounds Exception");
             return null;
         }
@@ -359,7 +363,7 @@ public final class List {
      *
      * @return     true if lists are equal.
      */
-    public boolean equals(List list ) {
+    public boolean equals(final List list) {
     // Replace the code below
         return list.toString().equals(this.toString());
         // int j = 0;
@@ -401,7 +405,7 @@ public final class List {
             // based on the list operation invoke the corresponding method
             switch (tokens[0]) {
                 case "add":
-                    if (tokens.length == 2){
+                    if (tokens.length == 2) {
                         String[] t = tokens[1].split(",");
                         if (t.length == 1) {
                             l.add(Integer.parseInt(tokens[1]));
@@ -441,8 +445,8 @@ public final class List {
                     if (tokens.length == 2) {
                         String[] t1 = tokens[1].split(",");
                         int[] temp = new int[t1.length];
-                        for(int i = 0; i < temp.length; i++) {
-                            temp[i]=Integer.parseInt(t1[i]);
+                        for (int i = 0; i < temp.length; i++) {
+                            temp[i] = Integer.parseInt(t1[i]);
                         }
                         l.addAll(temp);
                     }
@@ -451,18 +455,20 @@ public final class List {
                     if (tokens.length == 2) {
                         String[] t2 = tokens[1].split(",");
                         int[] a = new int[t2.length];
-                        for(int i = 0; i < t2.length; i++)
+                        for (int i = 0; i < t2.length; i++) {
                             a[i] = Integer.parseInt(t2[i]);
+                        }
                         l.removeAll(a);
                     }
                 break;
                 case "subList": {
-                    if (tokens.length != 2) break;
+                    if (tokens.length != 2) { break; }
                     String[] arrstring3 = tokens[1].split(",");
                     List object = l.subList(Integer.parseInt(arrstring3[0]),
                             Integer.parseInt(arrstring3[1]));
-                    if (object != null) 
+                    if (object != null) {
                         System.out.println(object);
+                    }
                     break;
                 }
                 case "equals":
