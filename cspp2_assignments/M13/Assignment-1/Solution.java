@@ -9,6 +9,9 @@ class Set {
     //your code goes here...
     //Good luck :-)
     //set variable.
+    /**
+     * set variable.
+     */
     private int[] set;
     /**
      * size variable.
