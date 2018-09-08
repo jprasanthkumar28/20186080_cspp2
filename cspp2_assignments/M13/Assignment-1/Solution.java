@@ -5,7 +5,7 @@ import java.util.Arrays;
  * Class for set.
  * @author     : Prasanth...
  */
-class Set {
+final class Set {
     //your code goes here...
     //Good luck :-)
     //set variable.
