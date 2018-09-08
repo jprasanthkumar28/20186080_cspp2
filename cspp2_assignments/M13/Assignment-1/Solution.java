@@ -163,7 +163,7 @@ final class Set {
         int i, j;
         for (i = 0; i < size; i++) {
             for (j = 0; j < size - 1; j++) {
-                s4[i][j] += s3[i][j];
+                s4[i][j] = s3[i][j];
             }
         }
         return s4;
