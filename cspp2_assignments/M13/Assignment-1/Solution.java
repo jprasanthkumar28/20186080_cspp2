@@ -92,7 +92,7 @@ class Set {
 	 */
 	public Set intersection(Set newSet) {
 		Set s1 = new Set();
-		int count = 0;
+		// int count = 0;
 		for (int i = 0; i < size; i++) {
 			if (newSet.contains(set[i])) {
 				s1.add(set[i]);
@@ -118,10 +118,17 @@ class Set {
 	public Set retainAll(int[] newSet) {
 		Set s2 = new Set();
 		for (int element : newSet) {
-			if (newSet[element] == set[element]) {
-				s2.add(element);
+			for (int i = 0; i < size; i++) {		
+				if (set[i] == element){
+					s2.add(set[i]);
+			}
 			}
 		}
+		// for (int i = 0; i < size; i++) {
+		// 	if (newSet.contains(set[i])) {
+		// 		s2.add(set[i]);
+		// 	}
+		// }
 		return s2;
 	}
 
