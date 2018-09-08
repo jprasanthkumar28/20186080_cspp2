@@ -25,7 +25,7 @@ final class Set {
     /**
      * Constructs the object for Set Class.
      */
-    public Set() {
+    protected Set() {
         size = 0;
         set = new int[TEN];
     }
