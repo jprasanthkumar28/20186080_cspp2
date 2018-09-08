@@ -92,18 +92,19 @@ class Set {
 	 */
 	public Set intersection(Set newSet) {
 		Set s1 = new Set();
-		// for (int i = 0; i < size; i++) {
-		// 	if (contains(i)) {
-		// 		s1.add(i);
-		// 	}
-		// }
-		for (int element = 0; element > size; element++) {
-			for (int element1 : set) {
-				if (contains(element) == contains(element1)) {
-					s1.add(element1);
-				}
+		int count = 0;
+		for (int i = 0; i < size; i++) {
+			if (newSet.contains(set[i])) {
+				s1.add(set[i]);
 			}
 		}
+		// for (int element = 0; element > size; element++) {
+		// 	for (int element1 : set) {
+		// 		if (contains(element) == contains(element1)) {
+		// 			s1.add(element1);
+		// 		}
+		// 	}
+		// }
 		return s1;
 	}
 
