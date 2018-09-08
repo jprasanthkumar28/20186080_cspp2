@@ -1,23 +1,26 @@
 import java.io.BufferedInputStream;
 import java.util.Scanner;
 import java.util.Arrays;
-
 /**
  * Class for set.
- * @author : Prasanth...
+ * @author     : Prasanth...
  */
 class Set {
     //your code goes here...
     //Good luck :-)
     private int[] set;
+    /**
+     * size variable.
+     */
     private int size;
+    private static final int TEN = 10;
 
     /**
      * Constructs the object for Set Class.
      */
     public Set() {
-    	size = 0;
-    	set = new int[10];
+        size = 0;
+        set = new int[TEN];
     }
     /**
      * to calculate the size of the set.
@@ -25,7 +28,7 @@ class Set {
      * @return     size of the set.
      */
     public int size() {
-    	return size;
+        return size;
     }
 
     /**
@@ -65,92 +68,92 @@ class Set {
      *
      * @param      item  The item
      */
-    public void add(int item) {
-		if(!contains(item)) {
-			set[size] = item;
-			size += 1;
-		}
-	}
+    public void add(final int item) {
+        if(!contains(item)) {
+            set[size] = item;
+            size += 1;
+        }
+    }
 
-	/**
-	 * add the set of values to set.
-	 *
-	 * @param      newSet  The new set
-	 */
-	public void add(int[] newSet) {
-		for (int i: newSet ) {
-			add(i);
-		}
-	}
+    /**
+     * add the set of values to set.
+     *
+     * @param      newSet  The new set
+     */
+    public void add(final int[] newSet) {
+        for (int i: newSet) {
+            add(i);
+        }
+    }
 
-	/**
-	 * compares two sets.
-	 *
-	 * @param      newSet  The new set
-	 *
-	 * @return     the set that contains values in both sets.
-	 */
-	public Set intersection(Set newSet) {
-		Set s1 = new Set();
-		// int count = 0;
-		for (int i = 0; i < size; i++) {
-			if (newSet.contains(set[i])) {
-				s1.add(set[i]);
-			}
-		}
-		// for (int element = 0; element > size; element++) {
-		// 	for (int element1 : set) {
-		// 		if (contains(element) == contains(element1)) {
-		// 			s1.add(element1);
-		// 		}
-		// 	}
-		// }
-		return s1;
-	}
+    /**
+     * compares two sets.
+     *
+     * @param      newSet  The new set
+     *
+     * @return     the set that contains values in both sets.
+     */
+    public Set intersection(final Set newSet) {
+        Set s1 = new Set();
+        // int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (newSet.contains(set[i])) {
+                s1.add(set[i]);
+            }
+        }
+        // for (int element = 0; element > size; element++) {
+        //  for (int element1 : set) {
+        //      if (contains(element) == contains(element1)) {
+        //          s1.add(element1);
+        //      }
+        //  }
+        // }
+        return s1;
+    }
 
-	/**
-	 * retains all the values.
-	 *
-	 * @param      newSet  The new set
-	 *
-	 * @return     the set of values.
-	 */
-	public Set retainAll(int[] newSet) {
-		Set s2 = new Set();
-		for (int element : newSet) {
-			for (int i = 0; i < size; i++) {		
-				if (set[i] == element){
-					s2.add(set[i]);
-			}
-			}
-		}
-		// for (int i = 0; i < size; i++) {
-		// 	if (newSet.contains(set[i])) {
-		// 		s2.add(set[i]);
-		// 	}
-		// }
-		return s2;
-	}
+    /**
+     * retains all the values.
+     *
+     * @param      newSet  The new set
+     *
+     * @return     the set of values.
+     */
+    public Set retainAll(int[] newSet) {
+        Set s2 = new Set();
+        for (int element : newSet) {
+            for (int i = 0; i < size; i++) {
+                if (set[i] == element) {
+                    s2.add(set[i]);
+            }
+            }
+        }
+        // for (int i = 0; i < size; i++) {
+        //  if (newSet.contains(set[i])) {
+        //      s2.add(set[i]);
+        //  }
+        // }
+        return s2;
+    }
 
-	/**
-	 * cartisians the two sets.
-	 *
-	 * @param      newSet  The new set
-	 *
-	 * @return     the set of cartiseian product.
-	 */
-	public int[][] cartesianProduct(Set newSet) {
-		// Set s3 = new Set();
-		int[][] s3 = new int[10][10];
-		int[][] s4 = new int[10][10];
-		int i,j;
-		for (i = 0; i < size; i++) {
-			for (j = 0; j < size - 1; j++) {
-				s4[i][j] += s3[i][j];
-			}
-		}
-		return s4;
-	}
+    /**
+     * cartisians the two sets.
+     *
+     * @param      newSet  The new set
+     *
+     * @return     the set of cartiseian product.
+     */
+    public int[][] cartesianProduct(Set newSet) {
+        // Set s3 = new Set();
+        int[][] s3 = new int[TEN][TEN];
+        int[][] s4 = new int[TEN][TEN];
+        int i, j;
+        for (i = 0; i < size; i++) {
+            for (j = 0; j < size - 1; j++) {
+                s4[i][j] += s3[i][j];
+            }
+        }
+        return s4;
+    }
 
 }
 /**
