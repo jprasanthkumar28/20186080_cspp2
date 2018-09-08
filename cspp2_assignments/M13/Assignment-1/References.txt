@@ -1,0 +1,7 @@
+https://codereview.stackexchange.com/questions/67804/generate-cartesian-product-of-list-in-java
+
+https://www.geeksforgeeks.org/passing-and-returning-objects-in-java/
+
+http://www.java2s.com/Code/Java/Collections-Data-Structure/ShowTwoDimensionalArrayofObjects.htm
+
+https://www.google.co.in/search?q=intersection+of+sets+in+java&oq=intersection+of+sets+&aqs=chrome.1.69i57j0l5.6235j0j7&sourceid=chrome&ie=UTF-8
