@@ -134,10 +134,10 @@ class Set {
 
     public Set retainAll(final int[] newSet) {
         Set s2 = new Set();
-        for (int element : newSet) {
             for (int i = 0; i < size; i++) {
+                for (int element : newSet) {
                 if (set[i] == element) {
-                    s2.add(set[element]);
+                    s2.add(set[i]);
             }
             }
         }
