@@ -8,11 +8,15 @@ import java.util.Arrays;
 class Set {
     //your code goes here...
     //Good luck :-)
+    //set variable.
     private int[] set;
     /**
      * size variable.
      */
     private int size;
+    /**
+     * var 10.
+     */
     private static final int TEN = 10;
 
     /**
@@ -69,7 +73,7 @@ class Set {
      * @param      item  The item
      */
     public void add(final int item) {
-        if(!contains(item)) {
+        if (!contains(item)) {
             set[size] = item;
             size += 1;
         }
@@ -118,7 +122,7 @@ class Set {
      *
      * @return     the set of values.
      */
-    public Set retainAll(int[] newSet) {
+    public Set retainAll(final int[] newSet) {
         Set s2 = new Set();
         for (int element : newSet) {
             for (int i = 0; i < size; i++) {
@@ -142,7 +146,7 @@ class Set {
      *
      * @return     the set of cartiseian product.
      */
-    public int[][] cartesianProduct(Set newSet) {
+    public int[][] cartesianProduct(final Set newSet) {
         // Set s3 = new Set();
         int[][] s3 = new int[TEN][TEN];
         int[][] s4 = new int[TEN][TEN];
