@@ -125,12 +125,19 @@ class Set {
      *
      * @return     the set of values.
      */
+    // retainAll [1,2,3,4,5] [1,4,3]
+    // retainAll [] [1,4,3]
+    // retainAll [1,2,3,4,5] []
+    // retainAll [1,4,3] [1,4,3]
+    // retainAll [1,2,3,4,5] [6,7,8]
+    // retainAll [1] [1]
+
     public Set retainAll(final int[] newSet) {
         Set s2 = new Set();
         for (int element : newSet) {
             for (int i = 0; i < size; i++) {
                 if (set[i] == element) {
-                    s2.add(set[i]);
+                    s2.add(set[element]);
             }
             }
         }
