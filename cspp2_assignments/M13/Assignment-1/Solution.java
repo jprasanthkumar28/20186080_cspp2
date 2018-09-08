@@ -157,7 +157,7 @@ final class Set {
      * @return     the set of cartiseian product.
      */
     public int[][] cartesianProduct(final Set newSet) {
-        // Set s3 = new Set();
+        // Set[] s3 = new Set();
         int[][] s3 = new int[TEN][TEN];
         int[][] s4 = new int[TEN][TEN];
         int i, j;
