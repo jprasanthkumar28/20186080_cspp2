@@ -113,8 +113,8 @@ class SortedSet extends Set {
  * Solution class.
  */
 public final class Solution {
-    /**
-     * Constructs the object for solution class
+    /**.
+     * Constructs the object for solution class.
      */
     private Solution() {
 
