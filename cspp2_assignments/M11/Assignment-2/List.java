@@ -1,14 +1,18 @@
 import java.util.Arrays;
 /*
-     * The goal for the list is to store items.
-     * How are we going to store the items in the list?
-     * An array would be good. Right?
-     * So, when we do not what we are going to have in the list
-     * We need to create a Generic list to store the items
+ * The goal for the list is to store items.
+ * How are we going to store the items in the list?
+ * An array would be good. Right?
+ * So, when we do not what we are going to have in the list
+ * We need to create a Generic list to store the items
 
-     * Here E is a type parameter, and it will be replaced with
-        actual type when the object got created.
-     */
+ * Here E is a type parameter, and it will be replaced with actual type when the
+   object got created.
+
+ List of ListADT generics.
+
+ @param      <E>   { parameter_description }
+*/
 public class List<E> {
     //Implement all the methods mentioned to build a ListADT
 
@@ -71,6 +75,7 @@ public class List<E> {
     /**
      * count variable.
      */
+    private static final int TEN = 10;
     /*
      * The purpose of the constructor is to initialize the class variables with
      * some default values.
@@ -93,7 +98,7 @@ public class List<E> {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        array = ((E[])new Object[10]);
+        array = ((E[]) new Object[TEN]);
         count = 0;
     }
     /*
@@ -109,7 +114,7 @@ public class List<E> {
      *
      * @param      item  The item
      */
-    public void add(E item) {
+    public void add(final E item) {
         //Inserts the specified element at the end of the list.
         if (count >= array.length) {
             resize();
@@ -237,7 +242,7 @@ public class List<E> {
      *
      * @return     true if exists or false.
      */
-    public boolean contains(E item) {
+    public boolean contains(final E item) {
         // Replace the code below
         return (indexOf(item) >= 0);
     }
@@ -252,7 +257,7 @@ public class List<E> {
      *
      * @return     the index index of the item.
      */
-    public int indexOf(E item) {
+    public int indexOf(final E item) {
         // Replace the code below
         for (int i = 0; i < count; i++) {
             if (array[i].equals(item)) {
@@ -276,7 +281,7 @@ public class List<E> {
      *
      * @param      newArray  The new array
      */
-    public void addAll(E[] newArray) {
+    public void addAll(final E[] newArray) {
         // write the logic
         if (count + newArray.length >= array.length) {
             resize();
@@ -294,7 +299,7 @@ public class List<E> {
       *
       * @param      newArray  The new array
       */
-    public void removeAll(E[] newArray) {
+    public void removeAll(final E[] newArray) {
         // write the logic
         if (newArray.length < array.length) {
             for (int i = 0; i < newArray.length; i++) {
