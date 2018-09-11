@@ -1,5 +1,5 @@
 import java.util.Arrays;
-/*
+/**
  * The goal for the list is to store items.
  * How are we going to store the items in the list?
  * An array would be good. Right?
