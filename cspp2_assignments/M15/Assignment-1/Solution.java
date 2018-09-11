@@ -159,7 +159,7 @@ public final class Solution {
             }
             count--;
         } else {
-            throw new Exception("IndexOutOfBoundsException");
+            throw new Exception("Invalid Position Exception");
         }
     }
 
@@ -302,7 +302,7 @@ public final class Solution {
             }
         }
         else {
-            throw new Exception("IndexOutOfBoundsException");
+            throw new Exception("Invalid Position Exception");
         }
         // for (int i = 0; i < newArray.length; i++) {
         //         for (int j = 0; j < count; j++) {
