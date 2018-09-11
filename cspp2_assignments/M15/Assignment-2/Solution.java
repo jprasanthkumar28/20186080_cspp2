@@ -34,11 +34,16 @@ class SortedSet extends Set {
     }
     /**
      * subSet method.
+     *
      * @param      fromElement  The from element
      * @param      toElement    To element
-     * @return     { description_of_the_return_value }
+     *
+     * @return     Invalid Arguments to Subset Exception.
+     *
+     * @throws     Exception    throws
      */
-    public int[] subSet(final int fromElement, final int toElement) throws Exception {
+    public int[] subSet(final int fromElement, final int toElement)
+        throws Exception {
         if (fromElement > toElement) {
             throw new Exception("Invalid Arguments to Subset Exception");
             // return null;
@@ -59,10 +64,14 @@ class SortedSet extends Set {
     }
     /**
      * headSet method.
+     *
      * @param      toElement  To element
+     *
      * @return     { description_of_the_return_value }
+     *
+     * @throws     Exception  Set Empty Exception.
      */
-    public int[] headSet(final int toElement) throws Exception  {
+    public int[] headSet(final int toElement) throws Exception {
         int[] result = new int[size];
         int tmp = 0;
         for (int i = 0; i < size; i++) {
@@ -78,7 +87,10 @@ class SortedSet extends Set {
     }
     /**
      * last method.
-     * @return     { description_of_the_return_value }
+     *
+     * @return     last element in set.
+     *
+     * @throws     Exception  Set Empty Exception.
      */
     public int last() throws Exception {
         if (size == 0) {
@@ -89,7 +101,7 @@ class SortedSet extends Set {
     }
     /**
      * Adds all.
-     * @param      ele   The ele
+     * @param      ele   The ele.
      */
     public void addAll(final int[] ele) {
         for (int i : ele) {
