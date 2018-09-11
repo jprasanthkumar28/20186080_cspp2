@@ -148,7 +148,9 @@ public final class Solution {
     /**
      * to remove the values in list at specified index.
      *
-     * @param      index  The index
+     * @param      index      The index
+     *
+     * @throws     Exception  throws an Invalid Position Exception.
      */
     public void remove(final int index) throws Exception {
         // write the logic for remove here. Think about what to do to the size
@@ -269,7 +271,7 @@ public final class Solution {
     */
     /**
      * Adds all the items to list.
-     *  
+     *
      * @param      newArray  The new array
      */
     public void addAll(final int[] newArray) {
@@ -288,7 +290,9 @@ public final class Solution {
      /**
       * Removes all values in the new array.
       *
-      * @param      newArray  The new array
+      * @param      newArray   The new array
+      *
+      * @throws     Exception  Invalid Position Exception.
       */
     public void removeAll(final int[] newArray) throws Exception {
         // write the logic
@@ -296,12 +300,11 @@ public final class Solution {
             for (int i = 0; i < newArray.length; i++) {
                 int index = indexOf(newArray[i]);
                 while (index != -1) {
-                   remove(index);
+                    remove(index);
                     index = indexOf(newArray[i]);
                 }
             }
-        }
-        else {
+        } else {
             throw new Exception("Invalid Position Exception");
         }
         // for (int i = 0; i < newArray.length; i++) {
@@ -323,10 +326,12 @@ public final class Solution {
     /**
      * to get the sublist.
      *
-     * @param      start  The start
-     * @param      end    The end
+     * @param      start      The start
+     * @param      end        The end
      *
      * @return     the list of items.
+     *
+     * @throws     Exception  Index Out of Bounds Exception.
      */
     public Solution subList(final int start, final int end) throws Exception {
     // write the logic for subList
@@ -355,6 +360,13 @@ public final class Solution {
         }
         return list1;
     }
+    /**
+     * count function
+     *
+     * @param      item  The item
+     *
+     * @return     the size.
+     */
     public int count(final int item) {
         int size = 0;
         for (int j = 0; j < count; j++) {
@@ -435,7 +447,7 @@ public final class Solution {
                     if (tokens.length == 2) {
                         l.remove(Integer.parseInt(tokens[1]));
                     }
-                    } catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println(e.getMessage());
                     }
                 break;
@@ -477,7 +489,7 @@ public final class Solution {
                         }
                         l.removeAll(a);
                     }
-                } catch(Exception e) {
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                 break;
@@ -491,8 +503,8 @@ public final class Solution {
                             Integer.parseInt(arrstring3[1]));
                     if (object != null) {
                         System.out.println(object);
-                    } 
-                } catch(Exception e) {
+                    }
+                } catch (Exception e) {
                     System.out.println(e.getMessage());
                 }
                     break;
