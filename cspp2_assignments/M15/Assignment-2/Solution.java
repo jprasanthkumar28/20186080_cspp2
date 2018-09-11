@@ -38,10 +38,10 @@ class SortedSet extends Set {
      * @param      toElement    To element
      * @return     { description_of_the_return_value }
      */
-    public int[] subSet(final int fromElement, final int toElement) {
+    public int[] subSet(final int fromElement, final int toElement) throws Exception {
         if (fromElement > toElement) {
-            System.out.println("Invalid Arguments to Subset Exception");
-            return null;
+            throw new Exception("Invalid Arguments to Subset Exception");
+            // return null;
         }
         int[] result = new int[size];
         int k = 0;
@@ -62,7 +62,7 @@ class SortedSet extends Set {
      * @param      toElement  To element
      * @return     { description_of_the_return_value }
      */
-    public int[] headSet(final int toElement) {
+    public int[] headSet(final int toElement) throws Exception  {
         int[] result = new int[size];
         int tmp = 0;
         for (int i = 0; i < size; i++) {
@@ -71,16 +71,19 @@ class SortedSet extends Set {
                 tmp++;
             }
         }
+        if (tmp <= 0) {
+            throw new Exception("Set Empty Exception");
+        }
         return Arrays.copyOf(result, tmp);
     }
     /**
      * last method.
      * @return     { description_of_the_return_value }
      */
-    public int last() {
+    public int last() throws Exception {
         if (size == 0) {
-            System.out.println("Set Empty Exception");
-            return -1;
+            throw new Exception("Set Empty Exception");
+            // return -1;
         }
         return set[size - 1];
     }
@@ -184,6 +187,7 @@ public final class Solution {
                 System.out.println(Arrays.deepToString(s.cartesianProduct(t)));
                 break;
             case "subSet":
+            try {
                 if (tokens.length != 2) {
                     break;
                 }
@@ -194,8 +198,12 @@ public final class Solution {
                     System.out.println(Arrays.toString(object).replace("[",
                         "{").replace("]", "}"));
                 }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
             case "headSet":
+            try {
                 if (tokens.length != 2) {
                     break;
                 }
@@ -204,13 +212,20 @@ public final class Solution {
                     System.out.println(Arrays.toString(obj).replace("[",
                         "{").replace("]", "}"));
                 }
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
             case "last":
+            try {
                 if (tokens.length != 1) {
                     break;
                 }
                 int temp = s.last();
                 System.out.println(temp);
+                } catch (Exception e) {
+                    System.out.println(e.getMessage());
+                }
                 break;
             case "addAll":
                 int[] intArr = intArray(tokens[1]);
