@@ -360,7 +360,7 @@ public final class Solution {
         }
         return list1;
     }
-    /**
+    /**.
      * count function
      *
      * @param      item  The item
