@@ -5,10 +5,22 @@ import java.util.Arrays;
  * @author     Prasanth...
  */
 class BookYourShow {
-    Patron[] patrons;
-    Show[] shows;
-    private int p_size;
-    private int s_size;
+    /**
+     * Patron object.
+     */
+    private Patron[] patrons;
+    /**
+     * Show class Object
+     */
+    private Show[] shows;
+    /**
+     * patrons size.
+     */
+    private int patronSize;
+    /**
+     * show size.
+     */
+    private int showSize;
     
     /**
      * Constructs the object.
@@ -16,8 +28,8 @@ class BookYourShow {
     public BookYourShow() {
         this.shows = new Show[10];
         this.patrons = new Patron[10];
-        this.p_size = 0;
-        this.s_size = 0;
+        this.patronSize = 0;
+        this.showSize = 0;
     }
 
     /**
@@ -38,10 +50,10 @@ class BookYourShow {
      * @param      newShow  The new show
      */
     public void addAShow(Show newShow) {
-        if (s_size == shows.length) {
+        if (showSize == shows.length) {
             s_resize();
         }
-        shows[s_size++] = newShow;
+        shows[showSize++] = newShow;
     }
 
     /**
@@ -50,10 +62,10 @@ class BookYourShow {
      * @param      patron  The patron
      */
     public void addAPatron(Patron newpatron) {
-        if (p_size > patrons.length) {
+        if (patronSize > patrons.length) {
             p_resize();
         }
-        patrons[p_size++] = newpatron;
+        patrons[patronSize++] = newpatron;
     }
 
     /**
@@ -65,7 +77,7 @@ class BookYourShow {
      * @return     A show.
      */
     public Show getAShow(String moviname, String datetime) {
-        for (int i =0; i < s_size; i++) {
+        for (int i =0; i < showSize; i++) {
             if (shows[i].getMovieName().equals(moviname)
                 && shows[i].getDate().equals(datetime)) {
                     return shows[i];
@@ -99,7 +111,7 @@ class BookYourShow {
         }
     }
     public void showAll() {
-        for (int i = 0; i < s_size; i++) {
+        for (int i = 0; i < showSize; i++) {
             System.out.println(shows[i]);
         }
     }
@@ -114,7 +126,7 @@ class BookYourShow {
         String datetime, String mobilenumber) {
         Show show = getAShow(moviename, datetime);
         if (show != null) {
-            for (int i = 0; i < p_size; i++) {
+            for (int i = 0; i < patronSize; i++) {
                 if (patrons[i].getNum().equals(mobilenumber)) {
                     System.out.println(mobilenumber + " " + moviename + " " + datetime);
                     return;
