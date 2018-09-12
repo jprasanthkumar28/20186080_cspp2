@@ -206,7 +206,7 @@ class Show {
      *
      * @return     left tickets.
      */
-    public String ExceptTickets() {
+    public String exceptTickets() {
         String s = "";
         s += movieName + "," + movieTime;
         return s;
@@ -333,7 +333,7 @@ public final class Solution {
                 case "get":
                     Show show = bys.getAShow(check[1], tokens[1]);
                     if (show != null) {
-                       System.out.println(show.ExceptTickets());
+                       System.out.println(show.exceptTickets());
                     } else {
                         System.out.println("No show");
                     }
