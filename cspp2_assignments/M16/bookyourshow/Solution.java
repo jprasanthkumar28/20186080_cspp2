@@ -149,9 +149,21 @@ class BookYourShow {
         }
     }
 }
+/**
+ * Class for show.
+ */
 class Show {
+    /**
+     * for name of the movie.
+     */
     private String movieName;
+    /**
+     * for timings of movie.
+     */
     private String movieTime;
+    /**
+     * for seats.
+     */
     private String[] seats;
     /**
      * Constructs the object for show class.
@@ -189,7 +201,7 @@ class Show {
     public String[] getSeats() {
         return this.seats;
     }
-    /**
+    /**.
      * { for except tickets }
      *
      * @return     left tickets.
@@ -207,7 +219,7 @@ class Show {
     public String toString() {
         String s = "";
         s += movieName + "," + movieTime + ",";
-        s += Arrays.toString(seats).replace(", ",",");
+        s += Arrays.toString(seats).replace(", ", ",");
         return s;
     }
 }
@@ -216,8 +228,17 @@ class Show {
  * Class for patron.
  */
 class Patron {
+    /**
+     * customer name.
+     */
     private String customerName;
+    /**
+     * phone number.
+     */
     private String phoneNumber;
+    /**
+     * booked seats.
+     */
     private String[] bookedSeats;
     /**
      * Constructs the object for Patron class.
@@ -227,7 +248,7 @@ class Patron {
      * @param      bseats    The bseats
      */
     Patron(final String cname,
-        final String phonenum, String[] bseats) {
+        final String phonenum, final String[] bseats) {
         this.customerName = cname;
         this.phoneNumber = phonenum;
         this.bookedSeats = bseats;
