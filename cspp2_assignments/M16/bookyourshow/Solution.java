@@ -35,13 +35,16 @@ class BookYourShow {
         this.showSize = 0;
     }
 
-    /**
+    /**.
      * { function_description }
      */
     public void showResize() {
         shows = Arrays.copyOf(shows, shows.length * 2);
         // patrons = Arrays.copyOf(patrons, patrons.length * 2);
     }
+    /**
+     * resize function for patrons.
+     */
     public void patronResize() {
         // shows = Arrays.copyOf(shows, shows.length * 2);
         patrons = Arrays.copyOf(patrons, patrons.length * 2);
@@ -58,11 +61,10 @@ class BookYourShow {
         }
         shows[showSize++] = newShow;
     }
-
     /**
      * Adds a patron.
      *
-     * @param      patron  The patron
+     * @param      newpatron  The newpatron
      */
     public void addAPatron(final Patron newpatron) {
         if (patronSize > patrons.length) {
@@ -80,7 +82,7 @@ class BookYourShow {
      * @return     A show.
      */
     public Show getAShow(final String moviname, final String datetime) {
-        for (int i =0; i < showSize; i++) {
+        for (int i = 0; i < showSize; i++) {
             if (shows[i].getMovieName().equals(moviname)
                 && shows[i].getDate().equals(datetime)) {
                     return shows[i];
@@ -104,8 +106,9 @@ class BookYourShow {
             String[] seats = avaiableShow.getSeats();
             String[] bookedSeats = p.getBookedSeats();
             for (int i = 0; i < seats.length; i++) {
-                for (int j =0; j < bookedSeats.length; j++) {
-                    if (seats[i].equals(bookedSeats[j]) && !seats[i].equals("N/A")) {
+                for (int j = 0; j < bookedSeats.length; j++) {
+                    if (seats[i].equals(bookedSeats[j])
+                        && !seats[i].equals("N/A")) {
                         seats[i] = "N/A";
                     }
                 }
@@ -114,12 +117,15 @@ class BookYourShow {
             System.out.println("No show");
         }
     }
+    /**
+     * Shows all.
+     */
     public void showAll() {
         for (int i = 0; i < showSize; i++) {
             System.out.println(shows[i]);
         }
     }
-    /**
+    /**.
      * { function_description }
      *
      * @param      moviename     The moviename
@@ -132,9 +138,10 @@ class BookYourShow {
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
                 if (patrons[i].getNum().equals(mobilenumber)) {
-                    System.out.println(mobilenumber + " " + moviename + " " + datetime);
+                    System.out.println(mobilenumber + " "
+                        + moviename + " " + datetime);
                     return;
-                } 
+                }
             }
             System.out.println("Invalid");
         } else {
@@ -158,20 +165,45 @@ class Show {
         this.movieTime = mtime;
         this.seats = nseats;
     }
+    /**
+     * Gets the movie name.
+     *
+     * @return     The movie name.
+     */
     public String getMovieName() {
         return this.movieName;
     }
+    /**
+     * Gets the date.
+     *
+     * @return     The date.
+     */
     public String getDate() {
         return this.movieTime;
     }
+    /**
+     * Gets the seats.
+     *
+     * @return     The seats.
+     */
     public String[] getSeats() {
         return this.seats;
     }
+    /**
+     * { for except tickets }
+     *
+     * @return     left tickets.
+     */
     public String ExceptTickets() {
         String s = "";
         s += movieName + "," + movieTime;
         return s;
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = "";
         s += movieName + "," + movieTime + ",";
@@ -200,15 +232,35 @@ class Patron {
         this.phoneNumber = phonenum;
         this.bookedSeats = bseats;
     }
+    /**
+     * Gets the cname.
+     *
+     * @return     The cname.
+     */
     public String getCname() {
         return this.customerName;
     }
+    /**
+     * Gets the number.
+     *
+     * @return     The number.
+     */
     public String getNum() {
         return this.phoneNumber;
     }
+    /**
+     * Gets the booked seats.
+     *
+     * @return     The booked seats.
+     */
     public String[] getBookedSeats() {
         return this.bookedSeats;
     }
+    /**
+     * Returns a string representation of the object.
+     *
+     * @return     String representation of the object.
+     */
     public String toString() {
         String s = "";
         return s;
