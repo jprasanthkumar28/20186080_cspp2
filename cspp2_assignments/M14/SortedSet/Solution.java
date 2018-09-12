@@ -99,7 +99,7 @@ class SortedSet extends Set {
  */
 public final class Solution {
     /**
-     * Constructs the object.
+     * Constructs the object for solution class
      */
     private Solution() {
 
