@@ -1,6 +1,6 @@
-// import java.io.BufferedInputStream;
-// import java.util.Scanner;
-
+/**
+ * Class for set.
+ */
 public class Set {
 
     /**
@@ -12,12 +12,12 @@ public class Set {
     /**
      * holds the elemtns in this Set array.
      */
-    public int[] set;
+    protected int[] set;
 
     /**
      * indicates the number of elememnts of this set.
      */
-    public int size;
+    protected int size;
 
     /**
      * Default constructor to create an array with the szie 10.
@@ -33,7 +33,7 @@ public class Set {
      * the size of the current set.
      * @param item to be inserted at the last.
      */
-    public void add(int item) {
+    public void add(final int item) {
         if (size == set.length) {
             resize();
         }
@@ -54,7 +54,7 @@ public class Set {
      * @param arr as an arr to be added in this set,
      *            if the element is not present in this set.
      */
-    public void add(int[] arr) {
+    public void add(final int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             add(arr[i]);
         }
@@ -66,7 +66,7 @@ public class Set {
      * @return the result that contains the common
      * elements of the two sets.
      */
-    public Set intersection(Set other) {
+    public Set intersection(final Set other) {
         Set result = new Set();
         for (int i = 0; i < this.size; i++) {
             if (other.contains(this.get(i))) {
@@ -95,7 +95,7 @@ public class Set {
      * @param  other as a Set 2.
      * @return the cartesian product in the form of 2D array.
      */
-    public int[][] cartesianProduct(final Set other) {
+    public int [][] cartesianProduct(final Set other) {
         int [][] result = new int[this.size() * other.size()][2];
         int k = -1;
         if (this.size() == 0 || other.size() == 0) {
