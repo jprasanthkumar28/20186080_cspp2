@@ -9,7 +9,7 @@ class BookYourShow {
      * Patron object.
      */
     private Patron[] patrons;
-    /**
+    /**.
      * Show class Object
      */
     private Show[] shows;
@@ -21,13 +21,16 @@ class BookYourShow {
      * show size.
      */
     private int showSize;
-    
+    /**
+     * integer variable.
+    */
+    private static final int TEN = 10;
     /**
      * Constructs the object.
      */
-    public BookYourShow() {
-        this.shows = new Show[10];
-        this.patrons = new Patron[10];
+    protected BookYourShow() {
+        this.shows = new Show[TEN];
+        this.patrons = new Patron[TEN];
         this.patronSize = 0;
         this.showSize = 0;
     }
@@ -35,11 +38,11 @@ class BookYourShow {
     /**
      * { function_description }
      */
-    public void s_resize() {
+    public void showResize() {
         shows = Arrays.copyOf(shows, shows.length * 2);
         // patrons = Arrays.copyOf(patrons, patrons.length * 2);
     }
-    public void p_resize() {
+    public void patronResize() {
         // shows = Arrays.copyOf(shows, shows.length * 2);
         patrons = Arrays.copyOf(patrons, patrons.length * 2);
     }
@@ -49,9 +52,9 @@ class BookYourShow {
      *
      * @param      newShow  The new show
      */
-    public void addAShow(Show newShow) {
+    public void addAShow(final Show newShow) {
         if (showSize == shows.length) {
-            s_resize();
+            showResize();
         }
         shows[showSize++] = newShow;
     }
@@ -61,9 +64,9 @@ class BookYourShow {
      *
      * @param      patron  The patron
      */
-    public void addAPatron(Patron newpatron) {
+    public void addAPatron(final Patron newpatron) {
         if (patronSize > patrons.length) {
-            p_resize();
+            patronResize();
         }
         patrons[patronSize++] = newpatron;
     }
@@ -76,7 +79,7 @@ class BookYourShow {
      *
      * @return     A show.
      */
-    public Show getAShow(String moviname, String datetime) {
+    public Show getAShow(final String moviname, final String datetime) {
         for (int i =0; i < showSize; i++) {
             if (shows[i].getMovieName().equals(moviname)
                 && shows[i].getDate().equals(datetime)) {
@@ -93,7 +96,8 @@ class BookYourShow {
      * @param      datetime   The datetime
      * @param      p          { parameter_description }
      */
-    public void bookAShow(String moviename, String datetime, Patron p) {
+    public void bookAShow(final String moviename,
+        final String datetime, final Patron p) {
         addAPatron(p);
         Show avaiableShow = getAShow(moviename, datetime);
         if (avaiableShow != null) {
@@ -122,8 +126,8 @@ class BookYourShow {
      * @param      datetime      The datetime
      * @param      mobilenumber  The mobilenumber
      */
-    public void printTicket(String moviename,
-        String datetime, String mobilenumber) {
+    public void printTicket(final String moviename,
+        final String datetime, final String mobilenumber) {
         Show show = getAShow(moviename, datetime);
         if (show != null) {
             for (int i = 0; i < patronSize; i++) {
@@ -149,7 +153,7 @@ class Show {
      * @param      mtime   The mtime
      * @param      nseats  The nseats
      */
-    Show(String mname, String mtime, String[] nseats) {
+    Show(final String mname, final String mtime, final String[] nseats) {
         this.movieName = mname;
         this.movieTime = mtime;
         this.seats = nseats;
@@ -190,7 +194,8 @@ class Patron {
      * @param      phonenum  The phonenum
      * @param      bseats    The bseats
      */
-    Patron(String cname, String phonenum, String[] bseats) {
+    Patron(final String cname,
+        final String phonenum, String[] bseats) {
         this.customerName = cname;
         this.phoneNumber = phonenum;
         this.bookedSeats = bseats;
