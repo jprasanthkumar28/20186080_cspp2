@@ -167,7 +167,7 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         // if (quiz.getCount() < 2) {
-        //     System.out.println("<question text> does not have 
+        //     System.out.println("<question text> does not have
         //     enough answer choices");
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
@@ -195,8 +195,8 @@ public final class Solution {
         // store the user respones in the quiz object
         for (int i = 1; i <= answerCount; i++) {
             System.out.println("question text " + i + "(" + i + ")");
-            System.out.print("choice 1\t" + "choice 2\t" + "choice 3\t" +
-                "choice 4");
+            System.out.print("choice 1\t" + "choice 2\t" + "choice 3\t"
+                + "choice 4");
             System.out.println("\n");
         }
         // String[] tokens = s.nextLine().split(" ");
@@ -206,15 +206,14 @@ public final class Solution {
     }
 
     /**
-     * Displays the score report
+     * Displays the score report.
      *
      * @param      quiz     The quiz object
      */
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
         int sum = 0;
-        int FOUR = 4;
-        for (int i = 1; i <= FOUR; i++) {
+        for (int i = 1; i <= 2 * 2; i++) {
             System.out.println("question text " + i);
             System.out.println(" Correct Answer! - Marks Awarded: " + i);
             // System.out.println("\n");
