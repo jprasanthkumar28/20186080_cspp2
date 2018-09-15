@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 /**
  * Solution class for code-eval.
+ * @author Prasanth... 
  */
 public final class Solution {
      /**
@@ -55,11 +56,29 @@ public final class Solution {
      * Class for quiz.
      */
     static class Quiz {
+        /**
+         * for number of questions.
+         */
         private String[] numQuestions;
+        /**
+         * for question count.
+         */
         private int qCount;
+        /**
+         * for max marks.
+         */
         private int maxMarks;
+        /**
+         * for penalty.
+         */
         private int penalty;
+        /**
+         * for total score.
+         */
         private int totalScore;
+        /**
+         * Constructs the object.
+         */
         protected Quiz() {
 
         }
@@ -72,7 +91,8 @@ public final class Solution {
          * @param      score  The score
          * @param      marks  The marks
          */
-        protected Quiz(String[] ques, int count, int pen, int score, int marks) {
+        protected Quiz(final String[] ques, final int count,
+            final int pen, final int score, final int marks) {
             this.numQuestions = ques;
             this.qCount = count;
             this.totalScore = score;
@@ -127,7 +147,7 @@ public final class Solution {
          *
          * @return     { description_of_the_return_value }
          */
-        public int setMaxMarks(int marks) {
+        public int setMaxMarks(final int marks) {
             this.maxMarks = marks;
             return maxMarks;
         }
@@ -141,7 +161,8 @@ public final class Solution {
      * @param      quiz           The quiz object
      * @param      questionCount  The question count
      */
-    public static void loadQuestions(final Scanner s, final Quiz quiz, final int questionCount) {
+    public static void loadQuestions(final Scanner s,
+        final Quiz quiz, final int questionCount) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -166,7 +187,8 @@ public final class Solution {
      * @param      quiz         The quiz object
      * @param      answerCount  The answer count
      */
-    public static void startQuiz(final Scanner s, final Quiz quiz, final int answerCount) {
+    public static void startQuiz(final Scanner s, final Quiz quiz,
+        final int answerCount) {
         // write your code here to display the quiz questions
         // read the user responses from the console
         // store the user respones in the quiz object
