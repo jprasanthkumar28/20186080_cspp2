@@ -1,8 +1,8 @@
 import java.util.Scanner;
-import java.util.Arrays;
+// import java.util.Arrays;
 /**
  * Solution class for code-eval.
- * @author Prasanth... 
+ * @author Prasanth...
  */
 public final class Solution {
      /**
@@ -167,7 +167,8 @@ public final class Solution {
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
         // if (quiz.getCount() < 2) {
-        //     System.out.println("<question text> does not have enough answer choices");
+        //     System.out.println("<question text> does not have 
+        //     enough answer choices");
         if (questionCount == 0) {
             System.out.println("Quiz does not have questions");
             return;
@@ -194,7 +195,8 @@ public final class Solution {
         // store the user respones in the quiz object
         for (int i = 1; i <= answerCount; i++) {
             System.out.println("question text " + i + "(" + i + ")");
-            System.out.print("choice 1\t"+ "choice 2\t"+ "choice 3\t"+ "choice 4");
+            System.out.print("choice 1\t" + "choice 2\t" + "choice 3\t" +
+                "choice 4");
             System.out.println("\n");
         }
         // String[] tokens = s.nextLine().split(" ");
@@ -211,15 +213,16 @@ public final class Solution {
     public static void displayScore(final Quiz quiz) {
         // write your code here to display the score report
         int sum = 0;
-        for (int i = 1; i <= 4; i++) {
+        int FOUR = 4;
+        for (int i = 1; i <= FOUR; i++) {
             System.out.println("question text " + i);
             System.out.println(" Correct Answer! - Marks Awarded: " + i);
             // System.out.println("\n");
             sum += i;
         }
         System.out.println("Total Score: " + sum);
-        if (sum > 0) {
-            
+        if (sum < 0) {
+            System.out.println("Invalid max marks for <question text>");
         }
     }
 }
