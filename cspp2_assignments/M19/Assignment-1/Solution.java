@@ -101,13 +101,16 @@ public final class Solution {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
+        // if (quiz.getCount() < 2) {
+        //     System.out.println("<question text> does not have enough answer choices");
         if (questionCount < 1) {
-            System.out.println("Quiz does not have questions");
+            System.out.println("Error! Malformed question");
+            return;
         }
-        String[] tokens = s.nextLine().split(" ");
-        String[] marks = tokens[1].split(" ");
-
         System.out.println(questionCount + " are added to the quiz");
+        // }
+        // String[] tokens = s.nextLine().split(" ");
+        // String[] marks = tokens[1].split(" ");
     }
 
     /**
