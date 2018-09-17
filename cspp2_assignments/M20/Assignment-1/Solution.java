@@ -312,10 +312,9 @@ public final class Solution {
                 Integer.parseInt(tokens[two]), Integer.parseInt(tokens[three]),
                 Integer.parseInt(tokens[four]));
                 quiz.addQuestion(ques);
-        		System.out.println(q + " are added to the quiz");
-
             }
         }
+        System.out.println(q + " are added to the quiz");
         }
     }
     /**
