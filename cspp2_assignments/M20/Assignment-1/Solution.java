@@ -290,6 +290,7 @@ public final class Solution {
         final int three = 3;
         if (q == 0) {
             System.out.println("Quiz does not have questions");
+            return;
         } else {
         for (int i = 0; i < q; i++) {
             String[] tokens = scan.nextLine().split(":");
