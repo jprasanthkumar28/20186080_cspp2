@@ -296,17 +296,22 @@ public final class Solution {
             String[] choices = tokens[1].split(",");
             if (tokens.length != five  || tokens[0].length() == 0) {
                 System.out.println("Error! Malformed question");
+                return;
             } else if (choices.length < two) {
                 System.out.println(tokens[0]
                     + " does not have enough answer choices");
+                return;
             } else if (Integer.parseInt(tokens[two]) > choices.length) {
                 System.out.println(
                     "Error! Correct answer choice number is out of range for "
                     + tokens[0]);
+                return;
             } else if (!(Integer.parseInt(tokens[three]) > 0)) {
                 System.out.println("Invalid max marks for " + tokens[0]);
+                return;
             } else if(!(Integer.parseInt(tokens[four]) <= 0)) {
                 System.out.println("Invalid penalty for " + tokens[0]);
+                return;
             } else {
                 Question ques = new Question(tokens[0], choices,
                 Integer.parseInt(tokens[two]), Integer.parseInt(tokens[three]),
@@ -314,8 +319,8 @@ public final class Solution {
                 quiz.addQuestion(ques);
             }
         }
-        System.out.println(q + " are added to the quiz");
         }
+        System.out.println(q + " are added to the quiz");
     }
     /**
      * Starts a quiz.
