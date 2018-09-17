@@ -45,11 +45,11 @@ class Question {
      */
     Question(final String question1, final String[] choices1,
         final int correctAnswer1, final int maxMarks1, final int penalty1) {
-    	this.questiontext = question1;
-    	this.choices = choices1;
-    	this.correctAnswer = correctAnswer1;
-    	this.maxMarks = maxMarks1;
-    	this.penalty = penalty1;
+        this.questiontext = question1;
+        this.choices = choices1;
+        this.correctAnswer = correctAnswer1;
+        this.maxMarks = maxMarks1;
+        this.penalty = penalty1;
     }
     /**
      * { function_description }.
@@ -59,10 +59,10 @@ class Question {
      * @return     { description_of_the_return_value }
      */
     public boolean evaluateResponse(final String choice) {
-    	if (choice.equals(choices[correctAnswer - 1])) {
-      		return true;
-      	}
-      	return false;
+        if (choice.equals(choices[correctAnswer - 1])) {
+            return true;
+        }
+        return false;
     }
     /**
      * Gets the correct answer.
@@ -110,7 +110,7 @@ class Question {
      * @param      answer  The answer
      */
     public void setResponse(final String answer) {
-    	this.response = answer;
+        this.response = answer;
     }
     /**
      * Gets the response.
@@ -153,8 +153,8 @@ class Quiz {
      * Constructs the object.
      */
     Quiz() {
-    	questions = new Question[onehundred];
-    	size = 0;
+        questions = new Question[onehundred];
+        size = 0;
 
     }
     /**
@@ -163,7 +163,7 @@ class Quiz {
      * @return     size.
      */
     public int size() {
-    	return size;
+        return size;
     }
     /**
      * rezizing the questions array.
@@ -177,10 +177,10 @@ class Quiz {
      * @param      q     The question
      */
     public void addQuestion(final Question q) {
-    	if (size == questions.length) {
-    		resize();
-    	}
-    		questions[size++] = q;
+        if (size == questions.length) {
+            resize();
+        }
+            questions[size++] = q;
     }
     /**
      * Gets the question.
@@ -280,7 +280,7 @@ public final class Solution {
      *
      */
     public static void loadQuestions(final Scanner scan,
-        final Quiz quiz, final int q){
+        final Quiz quiz, final int q) {
         // write your code here to read the questions from the console
         // tokenize the question line and create the question object
         // add the question objects to the quiz class
@@ -310,7 +310,7 @@ public final class Solution {
             } else if (!(Integer.parseInt(tokens[three]) > 0)) {
                 System.out.println("Invalid max marks for " + tokens[0]);
                 return;
-            } else if(!(Integer.parseInt(tokens[four]) <= 0)) {
+            } else if (!(Integer.parseInt(tokens[four]) <= 0)) {
                 System.out.println("Invalid penalty for " + tokens[0]);
                 return;
             } else {
@@ -336,18 +336,19 @@ public final class Solution {
         // read the user responses from the console using scanner object.
         // store the user respone in the question object
         try {
-        	String result;
-	        for (int i = 0; i < q; i++) {
-	            Question quesNum = quiz.getQuestion(i);
-	            System.out.println(quesNum.getQuestionText() + "(" + quesNum.getMaxMarks() + ")");
-	            System.out.println(quesNum.toString());
-	            System.out.println("");
-	            result = scan.nextLine();
-	            quesNum.setResponse(result);
-	        }
-	    } catch (Exception e) {
-	    	return;
-	    }
+            String result;
+            for (int i = 0; i < q; i++) {
+                Question quesNum = quiz.getQuestion(i);
+                System.out.println(quesNum.getQuestionText()
+                    + "(" + quesNum.getMaxMarks() + ")");
+                System.out.println(quesNum.toString());
+                System.out.println("");
+                result = scan.nextLine();
+                quesNum.setResponse(result);
+            }
+        } catch (Exception e) {
+            return;
+        }
     }
     /**
      * Displays the score report.
