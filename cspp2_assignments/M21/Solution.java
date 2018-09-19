@@ -2,6 +2,9 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Date;
 
+/**
+ * Class for food log.
+ */
 class FoodLog {
 	private	String foodName;
 	private int foodQuantity;
