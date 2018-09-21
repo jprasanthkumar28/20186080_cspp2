@@ -93,9 +93,9 @@ public class Solution {
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
-        String s = "\t";
+        String s = "";
         for (File file: allfiles) {
-            s += file.getName() + "";
+            s += file.getName() + "\t";
         }
         s += "\n";
         if (allfiles.length != 0) {
@@ -105,7 +105,7 @@ public class Solution {
                     Calculator d1 = new Calculator(file1 + "");
                     Calculator d2 = new Calculator(file2 + "");
                     Distance d = new Distance(d1, d2);
-                    s += d.similarity() + "" + "\t";
+                    s += d.similarity() + "\t" + "\t";
                 }
                 s = s.trim();
                 s += "\n";
