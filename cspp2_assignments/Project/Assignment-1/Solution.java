@@ -88,6 +88,8 @@ class Distance {
 public class Solution {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
+        try {
+
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
@@ -109,7 +111,8 @@ public class Solution {
                 s += "\n";
             }
             System.out.println(s);
-        } else {
+        } }
+        catch(Exception e) {
             System.out.println("empty directory");
         }
     }
