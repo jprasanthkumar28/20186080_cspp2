@@ -90,7 +90,6 @@ class BagOfWords {
 				}
 			}
 		}
-		//System.out.println(fl);
 		double onecoun = 0.0;
 		double twocoun = 0.0;
 		for (int ele = 0; ele < one.length; ele++) {
@@ -99,7 +98,7 @@ class BagOfWords {
 		for (int ele = 0; ele < two.length; ele++) {
 			twocoun += twocount[ele] * twocount[ele];
 		}
-		double ans = freq / (Math.sqrt(onecoun * twocoun));
+		double ans = Math.round(freq / (Math.sqrt(onecoun * twocoun)));
 		System.out.println(ans * 100.0);
 	}
 }
@@ -125,7 +124,7 @@ public class Solution {
 				}
 			}
 		} catch (Exception e) {
-			System.out.println("empty dictionary");
+			System.out.println("empty directory");
 		}
 	}
 	public static String toText(File file) {
@@ -138,7 +137,7 @@ public class Solution {
 				text.append(" ");
 			}
 			line.close();
-			str = text.toString().replaceAll("[^\\p{Alpha} ]", "");
+			str = text.toString().replaceAll("[^A-Za-z0-9]"," ");
 		} catch (Exception e) {
 			System.out.println("No File");
 		}
