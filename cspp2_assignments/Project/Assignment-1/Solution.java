@@ -1,147 +1,116 @@
+import java.io.*;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.Arrays;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.io.*;
-class Words {
-	String[] words;
-	int[] count;
-	String[] unique;
-	Words(String[] tokens) {
-		this.words = tokens;
+import java.util.*;
+
+class Calculator {
+	String[] word;
+	HashMap<String, Integer> val;
+
+	Calculator (String file) {
+		word = calci(file);
+		// System.out.println(Arrays.toString());
+
 	}
-	public String[] getWords() {
-		return this.words;
-	} public String[] uniqueWords() {
-		return this.unique;
-	} public int[] getWordCount() {
-		return this.count;
+	public String[] calci(String file) {
+		String[] str = null;
+		String s = "";
+		try {
+			// File filename1 = new File("input000.txt");
+			Scanner s1 = new Scanner(new File(file));
+			while (s1.hasNext()) {
+				s += (s1.nextLine().replaceAll("[^a-zA-Z0-9_]+"," ").toLowerCase())+" ";
+			}
+			str = s.split(" ");
+		} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		return str;
+
 	}
-	public void setCount(int[] tokens) {
-		this.count = tokens;
-	}
-	public void setUnique(String[] tokens) {
-		this.unique = tokens;
+	public HashMap<String, Integer> frequency() {
+		val = new HashMap<String, Integer>();
+		for (int i = 0; i < word.length; i++) {
+			if (val.containsKey(word[i])) {
+				val.put(word[i], val.get(word[i]) + 1);
+			} else {
+				val.put(word[i], 1);
+			}
+		}
+		return val;
 	}
 }
-class BagOfWords {
-	Words[] words;
-	int a;
-	BagOfWords() {
-		words = new Words[20];
-		a = 0;
-	}
-	public void addWords(Words token) {
-		words[a++] = token;
-	}
-	public String[] getDistinct(String[] names) {
-		// System.out.println(Arrays.toString(names));
-		String[] unique = new String[names.length];
-		int index = 0;
-		boolean flag = false;
-		for (int i = 0; i < names.length; i++) {
-			for (int j = 0; j < index + 1; j++) {
-				if (names[i].equals(unique[j])) {
-					flag = true;
-				}
-			}
-			if (!flag && names[i].length() != 0) {
-				unique[index] = names[i];
-				index += 1;
-			}
-			flag = false;
-		}
-		unique = Arrays.copyOf(unique, index);
-		// System.out.println(Arrays.toString(unique));
-		words[a - 1].setUnique(unique);
-		return unique;
-	}
-	public int[] getCount(String[] tokens, String[] unique) {
-		int[] count = new int[unique.length];
-		int index = 0;
-		int size = 0;
-		for (String uniq : unique) {
-			if (null == uniq) {
-				break;
-			}
-			for (String word : tokens) {
-				if (uniq.equals(word)) {
-					size += 1;
-				}
-			}
-			count[index] = size;
-			index += 1;
-			size = 0;
-		}
-		words[a - 1].setCount(count);
-		return count;
-	}
-	public void frequency(int index, int index1) {
-		String[] one = words[index].uniqueWords();
-		int[] onecount = words[index].getWordCount();
-		String[] two = words[index1].uniqueWords();
-		int[] twocount = words[index1].getWordCount();
-		double freq = 0.0;
-		for (int g = 0; g < one.length; g++) {
-			for (int f = 0; f < two.length; f++) {
-				if (one[g].equals(two[f])) {
-					freq += (onecount[g] * twocount[f]);
-				}
-			}
-		}
-		double onecoun = 0.0;
-		double twocoun = 0.0;
-		for (int ele = 0; ele < one.length; ele++) {
-			onecoun += onecount[ele] * onecount[ele];
-		}
-		for (int ele = 0; ele < two.length; ele++) {
-			twocoun += twocount[ele] * twocount[ele];
-		}
-		double ans = freq / (Math.sqrt(onecoun * twocoun));
-		System.out.println(ans * 100.0);
-	}
+class Distance {
+	private Calculator doc1;
+	private Calculator doc2;
+    Distance(Calculator d1, Calculator d2) {
+    	doc1 = d1;
+    	doc2 = d2;
+
+    }
+    public double Euclidean(Calculator d) {
+    	HashMap<String,Integer> hash = new HashMap<String,Integer>();
+    	hash = d.frequency();
+        long sum = 0;
+        for(Map.Entry<String, Integer> m : hash.entrySet()) {
+            // int val = (int)m.getValue();
+            sum += m.getValue()*m.getValue();
+        }
+        double prod = Math.sqrt(sum);
+        return prod;
+    }
+    public double DotProduct() {
+    	HashMap<String, Integer> dict1 = doc1.frequency(); 	
+    	HashMap<String, Integer> dict2 = doc2.frequency(); 	
+        String key;
+        int sum = 0;
+        for (Map.Entry<String, Integer> m: dict1.entrySet()) {
+            key = m.getKey();
+            if (dict2.containsKey(key)) {
+                int val1 = dict1.get(key);
+                int val2 = dict2.get(key);
+                sum += (val1*val2);
+            }
+        }
+        return sum;
+    }
+    public double similarity() {
+        double a = Euclidean(doc1);
+        double b = Euclidean(doc2);
+        double numer = a*b;
+        double denom = DotProduct();
+        double result = denom/numer;
+        result = result * 100;
+        return Math.round(result);
+    }
 }
 public class Solution {
-	public static void main(String[] args) {
-		BagOfWords word = new BagOfWords();
-		try {
-			Scanner sc = new Scanner(System.in);
-			String line = sc.nextLine();
-			File files = new File(line);
-			File[] list = files.listFiles();
-			int length = list.length;
-			for (int i = 0; i < length; i++) {
-				String s = toText(list[i]);
-				String[] tokens = s.toLowerCase().split(" ");
-				word.addWords(new Words(tokens));
-				String[] unique = word.getDistinct(tokens);
-				int[] count = word.getCount(tokens, unique);
-			}
-			for (int i = 0; i < length; i++) {
-				for (int j = 0; j < length; j++) {
-					word.frequency(i,j);
-				}
-			}
-		} catch (Exception e) {
-			System.out.println("empty directory");
-		}
-	}
-	public static String toText(File file) {
-		String str = "";
-		try {
-			Scanner line = new Scanner(new FileReader(file));
-			StringBuilder text = new StringBuilder();
-			while (line.hasNext()) {
-				text.append(line.next());
-				text.append(" ");
-			}
-			line.close();
-			str = text.toString().replaceAll("[^A-Za-z0-9]"," ");
-		} catch (Exception e) {
-			System.out.println("No File");
-		}
-		return str;
-	}
+    public static void main(String[] args) throws Exception {
+        Scanner scan = new Scanner(System.in);
+        String foldername = scan.nextLine();
+        final File folder = new File(foldername);
+        File[] allfiles = folder.listFiles();
+        String s = "\t";
+        for (File file: allfiles) {
+            s += file.getName() + "\t";
+        }
+        s += "\n";
+        if (allfiles.length != 0) {
+            for (File file1: allfiles) {
+                s += file1.getName() + "\t";
+                for (File file2: allfiles) {
+                    Calculator d1 = new Calculator(file1 + "");
+                    Calculator d2 = new Calculator(file2 + "");
+                    Distance d = new Distance(d1, d2);
+                    s += d.similarity() + "" + "\t";
+                }
+                s = s.trim();
+                s += "\n";
+            }
+            System.out.println(s);
+        } else {
+            System.out.println("empty directory");
+        }
+    }
 }
-
