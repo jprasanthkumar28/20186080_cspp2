@@ -98,7 +98,7 @@ class BagOfWords {
 		for (int ele = 0; ele < two.length; ele++) {
 			twocoun += twocount[ele] * twocount[ele];
 		}
-		double ans = Math.round(freq / (Math.sqrt(onecoun * twocoun)));
+		double ans = freq / (Math.sqrt(onecoun * twocoun));
 		System.out.println(ans * 100.0);
 	}
 }
