@@ -95,7 +95,7 @@ public class Solution {
         File[] allfiles = folder.listFiles();
         String s = "\t";
         for (File file: allfiles) {
-            s += file.getName() + "\t";
+            s += file.getName() + "\t\t";
         }
         s += "\n";
         if (allfiles.length != 0) {
