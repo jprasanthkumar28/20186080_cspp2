@@ -129,33 +129,34 @@ class Task {
 	 * @return     String representation of the object.
 	 */
 	public String toString() {
-		try {
-				if (getTitle() != "") {
-					String str = "";
-					str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
-					getUrgent() + ", " + getStatus();
-					return str;
-				}
-			} catch (Exception e) {
-				System.out.println("Title not provided");
-			}
-		// try {
-		// 		if (getTime() > 0) {
-		// 			return getTime();
+		String str = "";
+		str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
+		getUrgent() + ", " + getStatus();
+		return str;
+		// try {}
+		// 		if (getTitle() != "") {
+					
 		// 		}
 		// 	} catch (Exception e) {
-		// 		System.out.println("Invalid timeToComplete" + getTime());
+		// 		System.out.println("Title not provided");
 		// 	}
-			String str = "";
-		try {
-				if (getStatus() == "todo" || getStatus() == "done") {
-					str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
-					getUrgent() + ", " + getStatus();
-				}
-			} catch (Exception e) {
-				System.out.println("Invalid status");
-			}
-			return str;
+		// // try {
+		// // 		if (getTime() > 0) {
+		// // 			return getTime();
+		// // 		}
+		// // 	} catch (Exception e) {
+		// // 		System.out.println("Invalid timeToComplete" + getTime());
+		// // 	}
+		// 	String str = "";
+		// try {
+		// 		if (getStatus() == "todo" || getStatus() == "done") {
+		// 			str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
+		// 			getUrgent() + ", " + getStatus();
+		// 		}
+		// 	} catch (Exception e) {
+		// 		System.out.println("Invalid status");
+		// 	}
+		// 	return str;
 	}
 }
 /**
