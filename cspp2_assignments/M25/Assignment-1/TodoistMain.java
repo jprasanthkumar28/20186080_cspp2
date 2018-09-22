@@ -12,7 +12,7 @@ class Task {
 	private boolean taskUrgent;
 	private String taskStatus;
 	protected Task () {
-
+		// this.taskTime = time;
 	}
 	protected Task(String title, String assignedTo, int timeToComplete,
 		boolean important, boolean urgent, String status) {
@@ -97,9 +97,13 @@ class Todoist {
 	public int totalTime4Completion() {
 		int total = 0;
 		for (int i = 0; i < tasksize; i++) {
-			total += t.getTime();
+			// System.out.println("HIIIIII");
+			if (taskdata[i].getStatus().equals("todo")) {
+				total += taskdata[i].getTime();
+				// System.out.println(total);
+			}
 		}
-		return 0;
+		return total;
 	}
 
 }
