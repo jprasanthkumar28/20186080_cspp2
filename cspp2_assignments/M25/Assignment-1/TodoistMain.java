@@ -20,6 +20,19 @@ class Task {
 		this.taskUrgent = urgent;
 		this.taskStatus = status;
 	}
+	public String getTitle() {
+		return this.taskTitle;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public int getTime() {
+		return this.taskTime;
+	}
+	public String getStatus() {
+		return this.taskStatus;
+	}
+
 	public String getImp() {
 		String str = "";
 		if (this.taskImportant == true) {
@@ -40,8 +53,8 @@ class Task {
 	}
 	public String toString() {
 		String str = "";
-		str = taskTitle + ", " + name + ", " + taskTime + ", " + getImp() + ", " +
-		getUrgent() + ", " + taskStatus;
+		str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
+		getUrgent() + ", " + getStatus();
 		return str;
 	}
 }
