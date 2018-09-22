@@ -3,6 +3,7 @@ import java.util.Arrays;
 
 /**
   * write your code below this comment
+  * @author Prasanth...
   */
 class Task {
 	private String taskTitle;
@@ -58,20 +59,63 @@ class Task {
 		return str;
 	}
 	public String toString() {
-		String str = "";
-		str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
-		getUrgent() + ", " + getStatus();
-		return str;
+		try {
+				if (getTitle() != "") {
+					String str = "";
+					str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
+					getUrgent() + ", " + getStatus();
+					return str;
+				}
+			} catch (Exception e) {
+				System.out.println("Title not provided");
+			}
+		// try {
+		// 		if (getTime() > 0) {
+		// 			return getTime();
+		// 		}
+		// 	} catch (Exception e) {
+		// 		System.out.println("Invalid timeToComplete" + getTime());
+		// 	}
+			String str = "";
+		try {
+				if (getStatus() == "todo" || getStatus() == "done") {
+					str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
+					getUrgent() + ", " + getStatus();
+				}
+			} catch (Exception e) {
+				System.out.println("Invalid status");
+			}
+			return str;
 	}
 }
+/**
+ * Class for todoist.
+ */
 class Todoist {
+	/**
+	 * task[]
+	 */
 	private Task[] taskdata;
-	Task t = new Task();
+	/**
+	 * hundres.
+	 */
+	private static final int hundred = 100;
+	/**
+	 * size
+	 */
 	private int tasksize;
+	/**
+	 * Constructs the object.
+	 */
 	protected Todoist() {
-		taskdata = new Task[100];
+		taskdata = new Task[hundred];
 		tasksize = 0;
 	}
+	/**
+	 * Adds a task.
+	 *
+	 * @param      task  The task
+	 */
 	public void addTask(Task task) {
 		if (tasksize == taskdata.length) {
             resize();
@@ -80,6 +124,9 @@ class Todoist {
             taskdata[tasksize++] = task;
         }
 	}
+	/**
+	 * resize
+	 */
 	public void resize() {
 		taskdata = Arrays.copyOf(taskdata, tasksize + 2);
 	}
@@ -92,7 +139,12 @@ class Todoist {
 		return str;
 	}
 	public Task getNextTask(String personName) {
-		
+		// for (int i =0; i < tasksize; i++) {
+		// taskdata[i] = taskdata[i].getName();
+		// }
+		// for (personName : taskdata.getName() ) {
+		// 	addTask(taskdata);
+		// }
 		return null;
 	}
 	public Task[] getNextTask(String personName, int taskcount) {
