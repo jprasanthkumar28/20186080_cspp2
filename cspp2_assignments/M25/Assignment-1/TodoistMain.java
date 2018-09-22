@@ -69,7 +69,7 @@ class Todoist {
 	Task t = new Task();
 	private int tasksize;
 	protected Todoist() {
-		taskdata = new Task[10];
+		taskdata = new Task[100];
 		tasksize = 0;
 	}
 	public void addTask(Task task) {
