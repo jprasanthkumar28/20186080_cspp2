@@ -80,7 +80,7 @@ class Todoist {
 		String str = "";
 		for (int i = 0; i < tasksize; i++) {
 			// System.out.println(taskdata[i]);
-			str += taskdata[i];
+			str += taskdata[i] + "\n";
 		}
 		return str;
 	}
