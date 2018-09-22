@@ -26,6 +26,10 @@ class Task {
 	public String getTitle() {
 		return this.taskTitle;
 	}
+	public String setTitle(final String title) {
+        this.taskTitle = title;
+        return taskTitle;
+    }
 	public String getName() {
 		return this.name;
 	}
@@ -35,7 +39,6 @@ class Task {
 	public String getStatus() {
 		return this.taskStatus;
 	}
-
 	public String getImp() {
 		String str = "";
 		if (this.taskImportant == true) {
@@ -89,6 +92,7 @@ class Todoist {
 		return str;
 	}
 	public Task getNextTask(String personName) {
+		
 		return null;
 	}
 	public Task[] getNextTask(String personName, int taskcount) {
