@@ -15,31 +15,91 @@ class Task {
 	protected Task () {
 		// this.taskTime = time;
 	}
+	/**
+	 * Constructs the object.
+	 *
+	 * @param      title           The title
+	 * @param      assignedTo      The assigned to
+	 * @param      timeToComplete  The time to complete
+	 * @param      important       The important
+	 * @param      urgent          The urgent
+	 * @param      status          The status
+	 */
 	protected Task(String title, String assignedTo, int timeToComplete,
 		boolean important, boolean urgent, String status) {
+		/**
+		 * { item_description }
+		 */
 		this.taskTitle = title;
+		/**
+		 * { item_description }
+		 */
 		this.name = assignedTo;
+		/**
+		 * { item_description }
+		 */
 		this.taskTime = timeToComplete;
+		/**
+		 * { item_description }
+		 */
 		this.taskImportant = important;
+		/**
+		 * { item_description }
+		 */
 		this.taskUrgent = urgent;
+		/**
+		 * { item_description }
+		 */
 		this.taskStatus = status;
 	}
+	/**
+	 * Gets the title.
+	 *
+	 * @return     The title.
+	 */
 	public String getTitle() {
 		return this.taskTitle;
 	}
+	/**
+	 * Sets the title.
+	 *
+	 * @param      title  The title
+	 *
+	 * @return     { description_of_the_return_value }
+	 */
 	public String setTitle(final String title) {
         this.taskTitle = title;
         return taskTitle;
     }
+	/**
+	 * Gets the name.
+	 *
+	 * @return     The name.
+	 */
 	public String getName() {
 		return this.name;
 	}
+	/**
+	 * Gets the time.
+	 *
+	 * @return     The time.
+	 */
 	public int getTime() {
 		return this.taskTime;
 	}
+	/**
+	 * Gets the status.
+	 *
+	 * @return     The status.
+	 */
 	public String getStatus() {
 		return this.taskStatus;
 	}
+	/**
+	 * Gets the imp.
+	 *
+	 * @return     The imp.
+	 */
 	public String getImp() {
 		String str = "";
 		if (this.taskImportant == true) {
@@ -49,6 +109,11 @@ class Task {
 		}
 		return str;
 	}
+	/**
+	 * Gets the urgent.
+	 *
+	 * @return     The urgent.
+	 */
 	public String getUrgent() {
 		String str = "";
 		if (this.taskUrgent == true) {
@@ -58,6 +123,11 @@ class Task {
 		}
 		return str;
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		try {
 				if (getTitle() != "") {
@@ -130,6 +200,11 @@ class Todoist {
 	public void resize() {
 		taskdata = Arrays.copyOf(taskdata, tasksize + 2);
 	}
+	/**
+	 * Returns a string representation of the object.
+	 *
+	 * @return     String representation of the object.
+	 */
 	public String toString() {
 		String str = "";
 		for (int i = 0; i < tasksize; i++) {
@@ -138,6 +213,13 @@ class Todoist {
 		}
 		return str;
 	}
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      personName  The person name
+	 *
+	 * @return     The next task.
+	 */
 	public Task getNextTask(String personName) {
 		// for (int i =0; i < tasksize; i++) {
 		// taskdata[i] = taskdata[i].getName();
@@ -147,6 +229,14 @@ class Todoist {
 		// }
 		return null;
 	}
+	/**
+	 * Gets the next task.
+	 *
+	 * @param      personName  The person name
+	 * @param      taskcount   The taskcount
+	 *
+	 * @return     The next task.
+	 */
 	public Task[] getNextTask(String personName, int taskcount) {
 		return null;
 	}
