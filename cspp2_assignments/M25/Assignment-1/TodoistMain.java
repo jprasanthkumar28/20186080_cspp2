@@ -130,8 +130,16 @@ class Task {
 	 */
 	public String toString() {
 		String str = "";
+		// if (getTitle() == "") {
+		// 	System.out.println("Title not provided");
+		// } else if (getTime() < 0) {
+		// 	System.out.println("Invalid timeToComplete" + getTime());
+		// } else if (getStatus() != "todo" || getStatus() != "done") {
+		// 	System.out.println("Invalid status");
+		// } else {
 		str = getTitle() + ", " + getName() + ", " + getTime() + ", " + getImp() + ", " +
 		getUrgent() + ", " + getStatus();
+	// }
 		return str;
 		// try {}
 		// 		if (getTitle() != "") {
