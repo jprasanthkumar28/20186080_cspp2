@@ -11,6 +11,9 @@ class Task {
 	private boolean taskImportant;
 	private boolean taskUrgent;
 	private String taskStatus;
+	protected Task () {
+
+	}
 	protected Task(String title, String assignedTo, int timeToComplete,
 		boolean important, boolean urgent, String status) {
 		this.taskTitle = title;
@@ -60,6 +63,7 @@ class Task {
 }
 class Todoist {
 	private Task[] taskdata;
+	Task t = new Task();
 	private int tasksize;
 	protected Todoist() {
 		taskdata = new Task[10];
@@ -91,6 +95,10 @@ class Todoist {
 		return null;
 	}
 	public int totalTime4Completion() {
+		int total = 0;
+		for (int i = 0; i < tasksize; i++) {
+			total += t.getTime();
+		}
 		return 0;
 	}
 
