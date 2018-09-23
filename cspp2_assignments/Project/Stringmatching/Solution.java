@@ -81,7 +81,7 @@ class Frequency {
         int rows = s1.length();
         int columns = s2.length();
         double stringLength = rows + columns;
-        int[][] maximum = new int[rows][columns];
+        int[][] maximum = new int[rows + 1][columns + 1];
         int answer = 0;
         double similarity = 0;
         for (int i = 0; i <= rows; i++) {
