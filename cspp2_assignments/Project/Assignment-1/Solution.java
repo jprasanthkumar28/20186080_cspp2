@@ -27,7 +27,6 @@ class Calculator {
 				e.printStackTrace();
 			}
 		return str;
-
 	}
 	public HashMap<String, Integer> frequency() {
 		val = new HashMap<String, Integer>();
@@ -55,10 +54,12 @@ class Distance {
         long sum = 0;
         for(Map.Entry<String, Integer> m : hash.entrySet()) {
             // int val = (int)m.getValue();
-            sum += m.getValue()*m.getValue();
+            // System.out.println(m.getValue());
+            sum += m.getValue() * m.getValue();
+            // System.out.println("SUM---"+ sum);
         }
-        double prod = Math.sqrt(sum);
-        return prod;
+        double result = Math.sqrt(sum);
+        return result;
     }
     public double DotProduct() {
     	HashMap<String, Integer> dict1 = doc1.frequency(); 	
@@ -87,17 +88,18 @@ class Distance {
 }
 public class Solution {
     public static void main(String[] args) throws Exception {
+        long startTime = System.nanoTime();
         Scanner scan = new Scanner(System.in);
         try {
-
         String foldername = scan.nextLine();
         final File folder = new File(foldername);
         File[] allfiles = folder.listFiles();
         String s = "";
+        // System.out.println();
         for (File file: allfiles) {
             s += file.getName() + "\t";
         }
-        s += "\n";
+        s += "\t\n";
         if (allfiles.length != 0) {
             for (File file1: allfiles) {
                 s += file1.getName() + "\t";
@@ -110,7 +112,12 @@ public class Solution {
                 s = s.trim();
                 s += "\n";
             }
+            // Stopwatch stop = new St
+            // double time = 
             System.out.println(s);
+            long endTime   = System.nanoTime();
+            long totalTime = endTime - startTime;
+            System.out.println(totalTime);
         } }
         catch(Exception e) {
             System.out.println("empty directory");
