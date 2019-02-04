@@ -1,0 +1,87 @@
+************* Module Pythoo
+Pythoo.py:13:11: C0326: Exactly one space required after comma
+    for key,val in catalog.items():
+           ^ (bad-whitespace)
+Pythoo.py:14:13: C0326: Exactly one space required after comma
+        for k,v in val.items():
+             ^ (bad-whitespace)
+Pythoo.py:15:25: C0326: No space allowed before comma
+            print(key, k , float(v))
+                         ^ (bad-whitespace)
+Pythoo.py:28:11: C0326: Exactly one space required after comma
+    for key,val in cart.items():
+           ^ (bad-whitespace)
+Pythoo.py:35:13: C0303: Trailing whitespace (trailing-whitespace)
+Pythoo.py:36:11: C0326: Exactly one space required after comma
+    for key,val in catalog.items():
+           ^ (bad-whitespace)
+Pythoo.py:38:13: C0326: Exactly one space required after comma
+        for k,v in val.items():
+             ^ (bad-whitespace)
+Pythoo.py:40:18: C0326: Exactly one space required after comma
+            for k1,v1 in cart.items():
+                  ^ (bad-whitespace)
+Pythoo.py:53:28: C0326: Exactly one space required after comma
+    print("Payable amount: ",res)
+                            ^ (bad-whitespace)
+Pythoo.py:59:11: C0326: Exactly one space required after comma
+    for key,val in cart.items():
+           ^ (bad-whitespace)
+Pythoo.py:65:0: C0303: Trailing whitespace (trailing-whitespace)
+Pythoo.py:68:11: C0326: Exactly one space required after comma
+    for key,val in catalog.items():
+           ^ (bad-whitespace)
+Pythoo.py:69:13: C0326: Exactly one space required after comma
+        for k,v in val.items():
+             ^ (bad-whitespace)
+Pythoo.py:70:18: C0326: Exactly one space required after comma
+            for k1,v1 in cart.items():
+                  ^ (bad-whitespace)
+Pythoo.py:76:16: C0326: Exactly one space required after comma
+    print("Tax:",tax)
+                ^ (bad-whitespace)
+Pythoo.py:103:0: C0304: Final newline missing (missing-final-newline)
+Pythoo.py:1:0: C0103: Module name "Pythoo" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:1:0: C0111: Missing module docstring (missing-docstring)
+Pythoo.py:1:0: C0103: Constant name "catalog" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:1:0: W0604: Using the global statement at the module level (global-at-module-level)
+Pythoo.py:2:0: C0103: Constant name "catalog" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:3:0: C0103: Constant name "cart" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:3:0: W0604: Using the global statement at the module level (global-at-module-level)
+Pythoo.py:4:0: C0103: Constant name "cart" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:5:0: C0103: Function name "addCatalog" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:5:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:11:0: C0103: Function name "displayCatalog" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:11:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:14:14: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:17:0: C0103: Function name "addCart" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:17:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:27:0: C0103: Function name "displayCart" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:27:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:31:0: C0103: Function name "totalAmount" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:31:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:33:4: C0103: Constant name "amount" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:33:4: W0601: Global variable 'amount' undefined at the module level (global-variable-undefined)
+Pythoo.py:38:14: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:40:16: C0103: Variable name "k1" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:40:19: C0103: Variable name "v1" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:38:12: W0612: Unused variable 'k' (unused-variable)
+Pythoo.py:48:0: C0103: Function name "payableAmount" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:48:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:49:4: C0103: Constant name "res" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:49:4: W0601: Global variable 'res' undefined at the module level (global-variable-undefined)
+Pythoo.py:50:4: C0103: Constant name "tax" doesn't conform to UPPER_CASE naming style (invalid-name)
+Pythoo.py:50:4: W0601: Global variable 'tax' undefined at the module level (global-variable-undefined)
+Pythoo.py:56:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:66:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:69:14: C0103: Variable name "v" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:70:16: C0103: Variable name "k1" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:70:19: C0103: Variable name "v1" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:69:12: W0612: Unused variable 'k' (unused-variable)
+Pythoo.py:79:0: C0111: Missing function docstring (missing-docstring)
+Pythoo.py:81:8: C0103: Variable name "x" doesn't conform to snake_case naming style (invalid-name)
+Pythoo.py:81:8: W0612: Unused variable 'x' (unused-variable)
+
+-----------------------------------
+Your code has been rated at 2.43/10
+
